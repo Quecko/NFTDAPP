@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.93e06c5b.chunk.css",
+    "main.js": "/static/js/main.1d60b8db.chunk.js",
+    "main.js.map": "/static/js/main.1d60b8db.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.63b9179b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.63b9179b.js.map",
+    "static/css/2.001ea3fd.chunk.css": "/static/css/2.001ea3fd.chunk.css",
+    "static/js/2.e75fe9aa.chunk.js": "/static/js/2.e75fe9aa.chunk.js",
+    "static/js/2.e75fe9aa.chunk.js.map": "/static/js/2.e75fe9aa.chunk.js.map",
+    "static/js/3.3b530724.chunk.js": "/static/js/3.3b530724.chunk.js",
+    "static/js/3.3b530724.chunk.js.map": "/static/js/3.3b530724.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.cff1afe6e00addea0dd660e6bd75e398.js": "/precache-manifest.cff1afe6e00addea0dd660e6bd75e398.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.001ea3fd.chunk.css.map": "/static/css/2.001ea3fd.chunk.css.map",
+    "static/css/main.93e06c5b.chunk.css.map": "/static/css/main.93e06c5b.chunk.css.map",
+    "static/js/2.e75fe9aa.chunk.js.LICENSE.txt": "/static/js/2.e75fe9aa.chunk.js.LICENSE.txt",
+    "static/media/Frame 11 (2).png": "/static/media/Frame 11 (2).bb17b421.png",
+    "static/media/Frame 11 (3).png": "/static/media/Frame 11 (3).3b9f9218.png",
+    "static/media/Frame 11.png": "/static/media/Frame 11.4d8b57a4.png",
+    "static/media/Illustration-1.png": "/static/media/Illustration-1.0284986e.png",
+    "static/media/Illustration.png": "/static/media/Illustration.8c0ecf91.png",
+    "static/media/background.png": "/static/media/background.8a9ec111.png",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/image-care1.png": "/static/media/image-care1.5b0de945.png",
+    "static/media/roadmap-new.png": "/static/media/roadmap-new.a124f4b8.png",
+    "static/media/transaction-1.gif": "/static/media/transaction-1.411033c0.gif",
+    "static/media/transaction-2.gif": "/static/media/transaction-2.933997e6.gif",
+    "static/media/transaction-3.gif": "/static/media/transaction-3.2dea540b.gif",
+    "static/media/transaction-4.gif": "/static/media/transaction-4.df781ef4.gif",
+    "static/media/transaction-fees-background.png": "/static/media/transaction-fees-background.5422e6d7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63b9179b.js",
+    "static/css/2.001ea3fd.chunk.css",
+    "static/js/2.e75fe9aa.chunk.js",
+    "static/css/main.93e06c5b.chunk.css",
+    "static/js/main.1d60b8db.chunk.js"
+  ]
+}
