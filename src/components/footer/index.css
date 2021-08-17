@@ -114,6 +114,10 @@
 }
 
 @media(max-width: 600px){
+  .main-footer .footer-socials-all a {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 .main-footer .first-image{
   display: none;
 }
@@ -163,16 +167,22 @@ padding-top: 20px;}
 }
 
 @media(max-width: 360px){
+  .main-footer {
+    padding-top: 56px;
+  }
+  .main-footer .footer-socials-all a img{
+    width: 13%;
+  }
   .main-footer .community h1 {
     font-size: 25px;
-}
+  }
 .main-footer .community {
   padding-left: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
-}
+  }
 .main-footer .socials img {
   width: 55px;
-}
+  }
 
 }

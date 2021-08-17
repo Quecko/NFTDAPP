@@ -275,7 +275,7 @@ html{
 }
 
 .first-second .owl-carousel .owl-item img{
-  width: unset!important;
+  width: 89%;
   margin: 0 auto;
   padding-top: 16px;
 }
@@ -288,16 +288,19 @@ html{
   line-height: 24px;
   color: #220C86;
 }
+
 .recently-obtain-nft .first-second .slider-items .card-width .lower-textss{
   padding-left: 12px;
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
 .recently-obtain-nft .first-second .slider-items .card-width .lower-textss .ima-with-text{
   display: flex;
   justify-content: start;
   align-items: center;
 }
+
 .recently-obtain-nft .first-second .slider-items .card-width .lower-textss .ima-with-text p{
   font-family: 'Rubik';
   font-style: normal;
@@ -310,6 +313,7 @@ html{
 }
 .first-second .owl-carousel .owl-item .image-main-lower
 {
+  width: unset;
   margin: unset;
   padding-top: 0px;
 }
@@ -320,6 +324,7 @@ html{
   width: 100%;
   margin-top: 130px;
 }
+
 .landing-nft .why-invest .text-left h1{
   font-family: 'Montserrat';
   font-style: normal;
@@ -332,9 +337,7 @@ html{
   padding-right: 80px;
   padding-top: 30px;
 }
-.landing-nft .why-invest .text-left{
-  
-}
+
 .landing-nft .why-invest .text-left p{
   font-family: 'Rubik';
   font-style: normal;
@@ -358,6 +361,7 @@ html{
   width: 100%;
   margin-top: 130px;
 }
+
 .landing-nft .why-does-our-token .text-leftt h1{
   font-family: 'Montserrat';
   font-style: normal;
@@ -371,9 +375,7 @@ html{
   padding-left: 76px;
   padding-top: 30px;
 }
-.landing-nft .why-does-our-token .text-leftt{
-  
-}
+
 .landing-nft .why-does-our-token .text-leftt p{
   font-family: 'Rubik';
   font-style: normal;
@@ -395,14 +397,18 @@ html{
 .landing-nft .transaction{
   width: 100%;
   position: relative;
-  height: 675px;
+  height: auto;
   margin-top: 100px;
+  padding-bottom: 47px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .landing-nft .transaction .transaction-heading{
   text-align: center;
   padding-top: 82px;
 }
+
 .landing-nft .transaction .transaction-heading h1{
   font-family: 'Montserrat';
   font-style: normal;
@@ -411,6 +417,7 @@ html{
   line-height: 44px;
   color: #ffffff;
 }
+
 .landing-nft .transaction .transaction-heading p{
   font-family: 'Rubik';
   font-style: normal;
@@ -428,9 +435,11 @@ html{
   box-shadow: 0px 24px 34px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
+
 .landing-nft .transaction .inner-div-card:hover{
   transform: scale(1.1);
 }
+
 .landing-nft .transaction .inner-div-card h1{
   font-family: 'Montserrat';
   font-style: normal;
@@ -478,10 +487,12 @@ html{
   color: #ffffff;
   padding-bottom: 10px;
 }
+
 .landing-nft .roadmap .heading-text{
   text-align: center;
   padding-top: 70px;
 }
+
 .landing-nft .roadmap .heading-text p{
   font-family: 'Rubik';
   font-style: normal;
@@ -498,10 +509,12 @@ html{
   width: 345px;
   margin: 114px auto 0px;
 }
+
 .landing-nft .roadmap .inner-div-main:hover{
   background: linear-gradient(89.81deg, #1D98FF 0.12%, #2DC6FE 99.8%);
   cursor: pointer;
 }
+
 .landing-nft .roadmap .inner-div-mains:hover{
   background: linear-gradient(89.81deg, #1D98FF 0.12%, #2DC6FE 99.8%);
   cursor: pointer;
@@ -514,6 +527,7 @@ html{
   width: 345px;
   margin: 387px auto 0px;
 }
+
 .landing-nft .roadmap .inner-div-mains p{
   font-family: 'Rubik';
   font-style: normal;
@@ -522,6 +536,7 @@ html{
   line-height: 28px;
   color: #777580  ;
 }
+
 .landing-nft .roadmap .inner-div-mains h1{
   font-family: 'Montserrat';
   font-style: normal;
@@ -530,12 +545,14 @@ html{
   line-height: 34px;
   color: #220C86;
 }
+
 .landing-nft .roadmap .inner-div-mains{
   padding-left: 24px;
   padding-top: 29px;
   padding-right: 39px;
   position: relative;
 }
+
 /* upper-divs */
 
 .landing-nft .roadmap .inner-div-main{
@@ -590,13 +607,13 @@ html{
   top: 32%;
 }
 
-.landing-nft .roadmap .inner-div-main:hover p{
+.landing-nft .roadmap .inner-div-main:hover p,h1{
   color: #ffffff;
 }
 .landing-nft .roadmap .inner-div-main:hover h1{
   color: #ffffff;
 }
-.landing-nft .roadmap .inner-div-mains:hover p{
+.landing-nft .roadmap .inner-div-mains:hover p,h1{
   color: #ffffff;
 }
 .landing-nft .roadmap .inner-div-mains:hover h1{
@@ -611,9 +628,15 @@ html{
   .landing-nft .header-section .main-heads-one{
     height: 1135px;
   }
+  .landing-nft .recently-obtain-nft .main-caresousal{
+    margin-top: -480px;
+  }
 }
 
 @media(max-width: 1680px){
+  .landing-nft .recently-obtain-nft .main-caresousal{
+    margin-top: -400px;
+  }
   .landing-nft .header-section{
     height: 1006px;
   }
@@ -650,6 +673,9 @@ html{
 }
 
 @media(max-width: 1600px){
+  .landing-nft .recently-obtain-nft .main-caresousal {
+    margin-top: -346px;
+  }
   .landing-nft .header-section{
     height: 950px;
   }
@@ -658,28 +684,30 @@ html{
   }
   .landing-nft .header-section .main-head h1 {
     font-size: 44px;
-}
+  }
 .landing-nft .header-section .main-head p {
   font-size: 18px;
-}
+  }
 .landing-nft .header-section .main-head button {
   padding: 17px 22px;
   font-size: 17px;
   margin-top: 37px;
-}
+  }
 .landing-nft .featured-pool .searchbar h1 {
   font-size: 40px;
-}
+  }
 .featured-pool-coming-soon h1 {
   font-size: 40px;
-}
+  }
 .featured-pool-closed h1 {
   font-size: 40px;
-}
-
+  }
 }
 
 @media(max-width: 1500px){
+  .landing-nft .recently-obtain-nft .main-caresousal {
+    margin-top: -280px;
+}
   .landing-nft .header-section{
     height: 850px;
   }
@@ -801,6 +829,54 @@ html{
 
 @media(max-width: 1199px){
   .landing-nft .recently-obtain-nft .main-caresousal .heading-recent p{
+    font-size: 17px;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent h1{
+    font-size: 32px;
+  }
+  .landing-nft .roadmap .inner-div-mains{
+    margin: 298px auto 0px;
+  }
+  .landing-nft .roadmap .inner-div-main{
+    margin: 30px auto 0px;
+  }
+  .landing-nft .roadmap .main-inner-image-side{
+    top: 28%;
+  }
+  .landing-nft .roadmap{
+    background-position: center;
+    height: 993px;
+  }
+  .landing-nft .roadmap .heading-text p{
+    font-size: 17px;
+  }
+  .landing-nft .roadmap .heading-text h1{
+    font-size: 32px;
+  }
+  .landing-nft .transaction .transaction-heading p{
+    font-size: 17px;
+  }
+  .landing-nft .transaction .transaction-heading h1{
+    font-size: 32px;
+  }
+  .landing-nft .transaction .inner-div-card{
+    margin: 45px auto 70px;
+  }
+  .landing-nft .why-does-our-token .text-leftt p{
+    font-size: 17px;
+    padding-bottom: 13px;
+  }
+  .landing-nft .why-does-our-token .text-leftt h1{
+    font-size: 32px;
+  }
+  .landing-nft .why-invest .text-left h1{
+    font-size: 32px;
+  }
+  .landing-nft .why-invest .text-left p{
+    padding-bottom: 13px;
+    font-size: 17px;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent p{
     padding: 0px 214px;
   }
   .landing-nft .header-section .main-head p{
@@ -862,54 +938,222 @@ html{
 }
 
 @media(max-width: 991px){
+ 
+  .landing-nft .roadmap .inner-div-main{
+    width: 285px;
+    height: 181px;
+    padding-left: 20px;
+    padding-top: 11px;
+    padding-right: 10px;
+    margin: 40px auto 0px;
+  }
+  .landing-nft .roadmap .inner-div-mains {
+    width: 285px;
+    height: 181px;
+    padding-left: 20px;
+    padding-top: 11px;
+    padding-right: 10px;
+    margin: 309px auto 0px;
+}
+.landing-nft .roadmap .inner-div-mains p{
+  font-size: 16px;
+}
+  .landing-nft .roadmap .inner-div-main p{
+    font-size: 16px;
+  }
+  .landing-nft .transaction{
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .landing-nft .why-does-our-token .text-leftt p{
+    font-size: 16px;
+  }
+  .landing-nft .why-does-our-token .text-leftt h1 {
+    font-size: 28px;
+  }
+  .landing-nft .why-does-our-token .main-image-div{
+    text-align: center;
+  }
+  .landing-nft .why-does-our-token .main-image-div img {
+    padding-left: 0px;
+  }
+  .landing-nft .why-invest .main-image-div img{
+    width: 74%;
+    float: unset;
+  }
+  .landing-nft .why-invest .main-image-div{
+    text-align: center;
+  }
+  .landing-nft .why-invest .text-left p {
+    padding-bottom: 13px;
+    font-size: 16px;
+  }
+  .landing-nft .why-invest .text-left h1 {
+    font-size: 28px;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent p {
+    font-size: 16px;  
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent h1 {
+    font-size: 28px;
+  }
+  .landing-nft .header-section .main-head {
+    text-align: center;
+    padding: 184px 34px 156px;;
+  }
+  .recently-obtain-nft .main-caresousal .owl-carousel .owl-nav button.owl-next{
+    right: 314px;
+  }
+  .recently-obtain-nft .main-caresousal .owl-carousel .owl-nav button.owl-prev{
+    left: 314px;
+  }
+  .recently-obtain-nft .main-caresousal .first-second .card{
+    width: 250px;
+    margin: 0 auto;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent p{
+    padding: 0px 104px 20px;
+  }
   .landing-nft .featured-pool .searchbar .searchContainer input{
     width: 60%;
   }
   .landing-nft .featured-pool .searchbar .searchContainer {
     width: 38%;
-}
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal {
+    margin-top: -334px;
+  }
 }
 
 @media(max-width: 600px){
-  .landing-nft .featured-pool .searchbar{
-    justify-content: center;
+  .landing-nft .recently-obtain-nft .main-caresousal {
+    margin-top: -277px;
+}
+  .landing-nft .roadmap .heading-text p {
+    font-size: 16px;
+  }
+  .landing-nft .roadmap .heading-text h1 {
+    font-size: 24px;
+  }
+  .landing-nft .roadmap .inner-div-mains{
+    margin: 74px auto 0px;
+  }
+  .landing-nft .roadmap {
+    height: auto;
+    padding-bottom: 146px;
+  }
+  .landing-nft .roadmap .main-inner-image-side{
+    display: none;
+  }
+  .landing-nft .transaction{
+    padding-bottom: 90px;
+  }
+  .landing-nft .transaction .inner-div-card {
+    margin: 45px auto 10px;
+    width: 290px;
+  }
+  .landing-nft .transaction .inner-div-card h1 {
+    font-size: 54px;
+  }
+  .landing-nft .transaction .transaction-heading p {
+    font-size: 16px;
+  }
+  .landing-nft .transaction .transaction-heading h1 {
+    font-size: 24px;
+  }
+  .landing-nft .why-does-our-token .text-leftt h1 {
+    font-size: 24px;
+  }
+  .landing-nft .why-does-our-token .main-image-div img{
+    width: 74%;
+  }
+  .landing-nft .why-invest{
+    margin-top: 55px;
+  }
+  .landing-nft .why-does-our-token{
+    margin-top: 55px;
+  }
+  .landing-nft .why-invest .text-left h1{
+    font-size: 24px;
+    padding-right: 0px;
+  }
+  .recently-obtain-nft .main-caresousal .first-second {
+    padding-bottom: 52px;
+  }
+  .recently-obtain-nft .main-caresousal .owl-carousel .owl-nav button.owl-next {
+    right: 340px;
+  }
+  .recently-obtain-nft .main-caresousal .owl-carousel .owl-nav button.owl-prev {
+    left: 340px;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent p {
+    padding: 0px 28px 20px;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent h1{
+    font-size: 24px;
+  }
+  .landing-nft .header-section .main-head .header-button{
+    margin-top: 22px;
+  }
+  .landing-nft .header-section .main-head h1{
+    line-height: 44px;
+    font-size: 26px;
+  }
+  .landing-nft .header-section .main-head p {
+    padding-right: 12px;
+    padding-left: 12px;
   }
   .landing-nft .header-section .main-head {
     text-align: center;
-    padding: 175px 15px!important;
+    padding: 118px 15px!important;
   }
-  .landing-nft .featured-pool .searchbar .searchContainer {
-    width: 74%;
-    margin-bottom: 28px;
-  }
-  .landing-nft .featured-pool .searchbar .searchContainer i {
-    padding-top: 15px;
-  }
-  .landing-nft .featured-pool .searchbar .searchContainer input {
-    width: 65%;
-  }
+ 
   .featured-pool .card-main .main-image{
     justify-content: unset;
   }
   .featured-pool .card-main .main-image button {
     margin-left: 106px;
-}
+  }
 .featured-pool-coming-soon .card-main .main-image{
   justify-content: unset;
-}
+  }
 .featured-pool-coming-soon .card-main .main-image button {
   margin-left: 142px;
-}
+  }
 .featured-pool-closed .card-main .main-image{
   justify-content: unset;
-}
+  }
 .featured-pool-closed .card-main .main-image button {
   margin-left: 140px;
-}
+  }
 
-}
+  }
 
 @media(max-width: 400px){
+  .landing-nft .recently-obtain-nft .main-caresousal {
+    margin-top: -255px;
+  }
+  .recently-obtain-nft .main-caresousal .owl-carousel .owl-nav button.owl-next{
+    right: 194px;
+    bottom: 98%;
+  }
+  .recently-obtain-nft .main-caresousal .owl-carousel .owl-nav button.owl-prev{
+    left: 206px;
+    bottom: 98%;
+  }
+  
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent p {
+    padding: 0px 28px 50px;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent h1{
+    line-height: 34px;
+  }
+  .landing-nft .header-section .main-head .header-button{
+    margin-right: 0px;
+    margin-left: 10px;
+  }
   .featured-pool .card-main .main-image button {
     margin-left: 67px;
 }
@@ -922,6 +1166,72 @@ html{
 
 }
 @media(max-width: 360px){
+  .landing-nft .transaction .inner-div-card {
+    width: 260px;
+  }
+  .landing-nft .roadmap .inner-div-mains p {
+    font-size: 15px;
+  }
+  .landing-nft .roadmap .inner-div-main p {
+    font-size: 15px;
+  }
+  .landing-nft .roadmap .inner-div-mains {
+    width: 263px;
+    height: auto;
+    padding-bottom: 1px;
+  }
+  .landing-nft .roadmap .inner-div-main {
+    width: 263px;
+    height: auto;
+    padding-bottom: 1px;
+  }
+  .landing-nft .roadmap .heading-text{
+    padding-top: 20px;
+  }
+  .landing-nft .transaction .transaction-heading p {
+    font-size: 15px;
+  }
+  .landing-nft .transaction .transaction-heading h1 {
+    font-size: 22px;
+  }
+  .landing-nft .why-does-our-token .text-leftt p {
+    font-size: 15px;
+  }
+  .landing-nft .why-does-our-token .text-leftt h1 {
+    font-size: 22px;
+  }
+  .landing-nft .why-invest .text-left h1{
+    font-size: 22px;
+  }
+  .landing-nft .why-invest .text-left p {
+    padding-bottom: 10px;
+    font-size: 15px;
+  }
+  .recently-obtain-nft .main-caresousal .owl-carousel .owl-nav button.owl-next {
+    right: 162px;
+  }
+.recently-obtain-nft .main-caresousal .owl-carousel .owl-nav button.owl-prev {
+  left: 168px;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal .heading-recent h1 {
+    font-size: 22px;
+  }
+  .landing-nft .recently-obtain-nft .main-caresousal{
+    margin-top: -218px;
+  }
+  .landing-nft .header-section .main-head .header-button {
+    margin-right: 0px;
+    margin-left: 6px;
+    font-size: 14px;
+    padding: 10px 36px;
+  }
+  .landing-nft .header-section .main-head p {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .landing-nft .header-section .main-head h1{
+    font-size: 24px;
+  }
   .featured-pool .card-main .main-image button {
     margin-left: 10px;
 }

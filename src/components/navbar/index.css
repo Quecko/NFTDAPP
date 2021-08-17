@@ -164,7 +164,7 @@ color: #00D1FF;
 }
 }
 @media(max-width: 1199px){
-  .navbar .button-head button.button-one{width: 164px; font-size: 14px; line-height: 25px;}
+  .navbar .button-head button.button-one{width: 200px; font-size: 14px; line-height: 25px; padding: 10px 17px;}
   .navbar .nav-link:after{
     left: -2px;
   }

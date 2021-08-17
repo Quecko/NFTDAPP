@@ -20,7 +20,7 @@ class Landing extends Component {
   };
   render() {
     const owl_option = {
-      margin: 30,
+      margin: 40,
       nav: true,
       dots: true,
       dotsEach: true,
@@ -38,7 +38,7 @@ class Landing extends Component {
           items: 2,
         },
         700: {
-          items: 3,
+          items: 2,
         },
         1000: {
           items: 3,
@@ -76,7 +76,7 @@ class Landing extends Component {
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam.</p>
               </div>
               <div className="row">
-                <div className="col-lg-10 offset-1">
+                <div className="col-lg-10 offset-lg-1 col-md-12 offset-md-0">
                   <div className="first-second">
 
                     <OwlCarousel className="slider-items owl-carousel ltf-owl" autoplaySpeed={5000}  {...owl_option}>
@@ -169,12 +169,12 @@ class Landing extends Component {
         <section className="why-does-our-token">
           <div className="auto-container">
             <div className="row">
-              <div className="col-xl-6 col-lg-6 col-md-12 col-12">
+              <div className="col-lg-6 col-md-12 col-12">
                 <div className="main-image-div">
                   <img src={require("../../static/images/landing-nftdapp/Illustration-1.png")} className="" alt="" />
                 </div>
               </div>
-              <div className="col-xl-6 col-lg-6 col-md-12 col-12">
+              <div className="col-lg-6 col-md-12 col-12">
                 <div className="text-leftt">
                   <h1>WHAT DOES OUR TOKEN GIVE YOU?</h1>
                   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam.</p>
@@ -187,13 +187,13 @@ class Landing extends Component {
         </section>
 
         <section className="transaction" style={{ backgroundImage: `url(${require("../../static/images/landing-nftdapp/transaction-fees-background.png")})` }}>
-          <div className="auto-container">
+          <div className="container-fluid">
             <div className="transaction-heading">
               <h1>TRANSACTION FEES</h1>
               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant <br></br> doloremque laudantium totam rem aperiam.</p>
             </div>
             <div className="row">
-              <div className="col-xl-3 col-lg-3 col-md-4 col-12">
+              <div className="col-lg-3 col-md-4 col-12">
                 <div className="inner-div-card">
                   <div className="image text-center">
                     <img src={require("../../static/images/landing-nftdapp/transaction-1.gif")} className="img-fluid" alt="" />
@@ -204,7 +204,7 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-3 col-lg-3 col-md-4 col-12">
+              <div className="col-lg-3 col-md-4 col-12">
                 <div className="inner-div-card">
                   <div className="image text-center">
                     <img src={require("../../static/images/landing-nftdapp/transaction-2.gif")} className="img-fluid" alt="" />
@@ -215,7 +215,7 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-3 col-lg-3 col-md-4 col-12">
+              <div className="col-lg-3 col-md-4 col-12">
                 <div className="inner-div-card">
                   <div className="image text-center">
                     <img src={require("../../static/images/landing-nftdapp/transaction-3.gif")} className="img-fluid" alt="" />
@@ -226,13 +226,13 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-3 col-lg-3 col-md-4 col-12">
+              <div className="col-lg-3 col-md-4 col-12">
                 <div className="inner-div-card">
                   <div className="image text-center">
                     <img src={require("../../static/images/landing-nftdapp/transaction-4.gif")} className="img-fluid" alt="" />
                   </div>
                   <div className="main-lower-div">
-                    <h1>2%</h1>
+                    <h1>3%</h1>
                     <p>LIQUIDITY</p>
                   </div>
                 </div>
@@ -242,21 +242,21 @@ class Landing extends Component {
         </section>
 
         <section className="roadmap" style={{ backgroundImage: `url(${require("../../static/images/landing-nftdapp/roadmap-new.png")})` }}>
-          <div className="auto-container">
+          <div className="container-fluid">
             <div className="heading-text">
               <h1>ROADMAP</h1>
               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant <br></br> doloremque laudantium totam rem aperiam.</p>
             </div>
             <img src={require("../../static/images/landing-nftdapp/roadmap-line.png")} className="main-inner-image-side" alt="" />
-            <div className="col-xl-10 offset-xl-1 col-lg-12 offset-lg-0">
+            <div className="container">
               <div className="row">
-                <div className="col-xl-6 col-lg-6">
+                <div className="col-lg-6 col-md-6 col-12">
                   <div className="inner-div-mains">
                     <h1>Q2</h1>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam. </p>
                   </div>
                 </div>
-                <div className="col-xl-6 col-lg-6">
+                <div className="col-lg-6 col-md-6 col-12">
                   <div className="inner-div-main">
                     <h1>Q1</h1>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam. </p>
