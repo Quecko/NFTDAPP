@@ -7,8 +7,8 @@ import CheckCircle from '@material-ui/icons/CheckCircle';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Landing from './landing';
-import '../static/css/style.css';
-
+// import '../static/css/style.css';
+import '../static/css/style.scss';
 
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';

@@ -1,0 +1,853 @@
+/* landing NFT Banner */
+/* recently obtain nft */
+/* why invest */
+/* why does our token */
+/* transaction start css */
+/* road map */
+/* upper-divs */
+.landing-nft {
+	.header-section {
+		position: relative;
+		background-repeat: no-repeat;
+		height: 850px;
+		width: 100%;
+		background-size: cover;
+		background-position: top center;
+		.main-heads-one {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 850px;
+			width: 100%;
+		}
+		.main-head {
+			h1 {
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 900;
+				font-size: 46px;
+				line-height: 56px;
+				padding-bottom: 20px;
+				color: #ffffff;
+			}
+			p {
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 20px;
+				text-align: center;
+				color: #ffffff;
+				padding-right: 90px;
+				padding-left: 90px;
+			}
+			button {
+				img {
+					padding-right: 13px;
+				}
+			}
+			text-align: center;
+			padding: 230px;
+			padding-bottom: 0px;
+			position: relative;
+		}
+	}
+	.recently-obtain-nft {
+		position: relative;
+		width: 100%;
+		.main-caresousal {
+			background: linear-gradient(89.81deg, #1D98FF 0.12%, #2DC6FE 99.8%);
+			box-shadow: 0px 8px 104px #180475;
+			border-radius: 20px;
+			height: auto;
+			margin-top: -260px;
+			.heading-recent {
+				text-align: center;
+				h1 {
+					padding-top: 32px;
+				}
+				p {
+					padding: 0px 290px;
+					padding-top: 10px;
+					padding-bottom: 35px;
+				}
+			}
+			.first-second {
+				padding-bottom: 70px;
+				.card {
+					border-radius: 20px;
+				}
+			}
+			.first-slider {
+				.card {
+					.down-trending {
+						.heart {
+							padding-left: 68px;
+						}
+					}
+				}
+			}
+			.text-heading {
+				h2 {
+					font-size: 32px;
+					font-weight: bold;
+					padding-bottom: 40px;
+					span {
+						img {
+							padding-left: 10px;
+							padding-bottom: 8px;
+						}
+					}
+				}
+				display: flex;
+				justify-content: left;
+				align-items: center;
+			}
+			.owl-dots {
+				display: none;
+			}
+			.owl-nav {
+				display: block !important;
+			}
+			.owl-carousel {
+				.owl-nav {
+					button.owl-prev {
+						position: absolute;
+						background: #ffffff;
+						color: #2CC5FE;
+						width: 44px;
+						height: 44px;
+						font-size: 30px;
+						margin-bottom: 20px;
+						padding-bottom: 6px !important;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						outline: none;
+						border-radius: 50%;
+						left: -78px;
+						bottom: 37%;
+						box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+						&:hover {
+							background: #f47a2f;
+							color: #ffffff;
+							border: 2px solid #ffac1e;
+						}
+					}
+					button.owl-next {
+						position: absolute;
+						background: #ffffff;
+						color: #2CC5FE;
+						width: 44px;
+						height: 44px;
+						font-size: 30px;
+						margin-bottom: 20px;
+						padding-bottom: 6px !important;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						outline: none;
+						border-radius: 50%;
+						right: -78px;
+						box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+						bottom: 37%;
+                        &:hover {
+							background: #f47a2f;
+							color: #ffffff;
+							border: 2px solid #ffac1e;
+						}
+					}
+				}
+			}
+		}
+		.first-second {
+			.owl-carousel {
+				.owl-item {
+					img {
+						width: 89%;
+						margin: 0 auto;
+						padding-top: 16px;
+					}
+					.image-main-lower {
+						width: unset;
+						margin: unset;
+						padding-top: 0px;
+					}
+				}
+			}
+			.slider-items {
+				.card-width {
+					.lower-textss {
+						h1 {
+							font-family: 'Rubik';
+							font-style: normal;
+							font-weight: 500;
+							font-size: 20px;
+							line-height: 24px;
+							color: #220C86;
+						}
+						padding-left: 12px;
+						padding-top: 10px;
+						padding-bottom: 20px;
+						.ima-with-text {
+							display: flex;
+							justify-content: start;
+							align-items: center;
+							p {
+								font-family: 'Rubik';
+								font-style: normal;
+								font-weight: normal;
+								font-size: 14px;
+								line-height: 17px;
+								margin-bottom: 0px;
+								color: #535353;
+								padding-left: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.why-invest {
+		position: relative;
+		width: 100%;
+		margin-top: 130px;
+		.text-left {
+			h1 {
+				margin-bottom: 0px;
+				padding-bottom: 12px;
+				padding-right: 80px;
+				padding-top: 30px;
+			}
+			p {
+				margin-bottom: 0px;
+				padding-bottom: 30px;
+				padding-right: 80px;
+			}
+		}
+		.main-image-div {
+			img {
+				float: right;
+			}
+		}
+	}
+	.why-does-our-token {
+		position: relative;
+		width: 100%;
+		margin-top: 130px;
+		.text-leftt {
+			h1 {
+				margin-bottom: 0px;
+				padding: 30px 0px 12px 76px;
+			}
+			p {
+				margin-bottom: 0px;
+				padding-bottom: 30px;
+				padding-left: 80px;
+			}
+		}
+		.main-image-div {
+			img {
+				padding-left: 60px;
+			}
+		}
+	}
+	.transaction {
+		width: 100%;
+		position: relative;
+		height: auto;
+		margin-top: 100px;
+		padding-bottom: 47px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		.transaction-heading {
+			text-align: center;
+			padding-top: 82px;
+		}
+		.inner-div-card {
+			background: #FFFFFF;
+			border: 3px solid #FFFFFF;
+			box-sizing: border-box;
+			transition: transform .4s;
+			box-shadow: 0px 24px 34px rgba(0, 0, 0, 0.25);
+			border-radius: 10px;
+			width: 100%;
+			margin: 70px auto;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.1);
+			}
+			h1 {
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 900;
+				font-size: 78px;
+				line-height: 78px;
+				color: #220C86;
+			}
+			p {
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 22px;
+				color: #777580;
+			}
+			.main-lower-div {
+				padding-left: 20px;
+			}
+		}
+	}
+	.roadmap {
+		position: relative;
+		width: 100%;
+		margin-top: 100px;
+		height: 1150px;
+		background-size: cover;
+		.heading-text {
+			text-align: center;
+			padding-top: 70px;
+		}
+		.inner-div-main {
+			background: #FFFFFF;
+			border-radius: 10px;
+			height: 209px;
+			width: 345px;
+			margin: 130px auto 0px;
+			padding-left: 24px;
+			padding-top: 29px;
+			padding-right: 39px;
+			position: relative;
+			&:hover {
+				background: linear-gradient(89.81deg, #1D98FF 0.12%, #2DC6FE 99.8%);
+				cursor: pointer;
+				p {
+					color: #ffffff;
+				}
+				h1 {
+					color: #ffffff;
+				}
+			}
+			p {
+				color: #777580;
+			}
+			h1 {
+				font-size: 28px;
+				color: #220C86;
+			}
+			&:before {
+				position: absolute;
+				content: "";
+				width: 20px;
+				height: 20px;
+				top: 33%;
+				left: -10px;
+				background-color: #fff;
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+		}
+		.inner-div-mains {
+			&:hover {
+				background: linear-gradient(89.81deg, #1D98FF 0.12%, #2DC6FE 99.8%);
+				cursor: pointer;
+				p {
+					color: #ffffff;
+				}
+				h1 {
+					color: #ffffff;
+				}
+			}
+			background: #FFFFFF;
+			border-radius: 10px;
+			height: 209px;
+			width: 345px;
+			margin: 400px auto 0px;
+			padding-left: 24px;
+			padding-top: 29px;
+			padding-right: 39px;
+			position: relative;
+			p {
+				color: #777580;
+			}
+			h1 {
+				font-size: 28px;
+				color: #220C86;
+			}
+			&:before {
+				position: absolute;
+				content: "";
+				width: 20px;
+				height: 20px;
+				top: 35%;
+				right: -10px;
+				background-color: #fff;
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+		}
+		.main-inner-image-side {
+			position: absolute;
+			left: 49%;
+			top: 32%;
+		}
+	}
+}
+@media (max-width: 1920px) {
+	.landing-nft {
+		.header-section {
+			height: 1135px;
+			.main-heads-one {
+				height: 1135px;
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				margin-top: -480px;
+			}
+		}
+	}
+}
+@media (max-width: 1680px) {
+	.landing-nft {
+		.header-section {
+			height: 1006px;
+			.main-heads-one {
+				height: 1006px;
+			}
+			.main-head {
+				h1 {
+					font-size: 50px;
+				}
+				p {
+					font-size: 19px;
+				}
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				margin-top: -400px;
+			}
+		}
+	}
+}
+@media (max-width: 1600px) {
+	.landing-nft {
+		.header-section {
+			height: 950px;
+			.main-heads-one {
+				height: 950px;
+			}
+			.main-head {
+				h1 {
+					font-size: 44px;
+				}
+				p {
+					font-size: 18px;
+				}
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				margin-top: -346px;
+			}
+		}
+	}
+}
+@media (max-width: 1500px) {
+	.landing-nft {
+		.header-section {
+			height: 850px;
+			.main-heads-one {
+				height: 850px;
+			}
+			.main-head {
+				h1 {
+					font-size: 40px;
+					padding-bottom: 8px;
+				}
+				p {
+					font-size: 16px;
+				}
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				margin-top: -280px;
+			}
+		}
+	}
+}
+@media (max-width: 1400px) {
+	.landing-nft {
+		.header-section {
+			.main-head {
+				h1 {
+					font-size: 36px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+	.landing-nft {
+		.header-section {
+			.main-head {
+				h1 {
+					font-size: 30px;
+					padding-bottom: 0px;
+				}
+				text-align: center;
+				padding: 220px 150px;
+				p {
+					padding-right: 30px;
+					padding-left: 30px;
+				}
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				.owl-carousel {
+					.owl-nav {
+						button.owl-next {
+							right: -61px;
+						}
+						button.owl-prev {
+							left: -61px;
+						}
+					}
+				}
+				.heading-recent {
+					p {
+						padding: 0px 214px;
+					}
+				}
+			}
+		}
+		.why-invest {
+			.main-image-div {
+				img {
+					width: 100%;
+				}
+			}
+			.text-left {
+				p {
+					padding-right: 0px;
+					padding-bottom: 13px;
+				}
+			}
+		}
+		.why-does-our-token {
+			.main-image-div {
+				img {
+					padding-left: 8px;
+				}
+			}
+			.text-leftt {
+				h1 {
+					padding-left: 0px;
+				}
+				p {
+					padding-left: 0px;
+				}
+			}
+		}
+		.transaction {
+			.inner-div-card {
+				p {
+					font-size: 16px;
+				}
+				h1 {
+					font-size: 64px;
+				}
+				margin: 45px auto 70px;
+				.main-lower-div {
+					padding-left: 12px;
+				}
+			}
+		}
+		.roadmap {
+			.inner-div-mains {
+				margin: 308px auto 0px;
+			}
+			.inner-div-main {
+				margin: 40px auto 0px;
+			}
+			.main-inner-image-side {
+				top: 28%;
+			}
+			background-position: center;
+			height: 993px;
+		}
+	}
+}
+@media (max-width: 991px) {
+	.landing-nft {
+		.header-section {
+			.main-head {
+				text-align: center;
+				padding: 184px 34px 156px;
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				.owl-carousel {
+					.owl-nav {
+						button.owl-next {
+							right: 302px;
+						}
+						button.owl-prev {
+							left: 302px;
+						}
+					}
+				}
+				.first-second {
+					.card {
+						width: 250px;
+						margin: 0 auto;
+					}
+				}
+				.heading-recent {
+					p {
+						padding: 0px 104px 20px;
+					}
+				}
+				margin-top: -334px;
+			}
+		}
+		.why-invest {
+			.main-image-div {
+				img {
+					width: 74%;
+					float: unset;
+				}
+				text-align: center;
+			}
+		}
+		.why-does-our-token {
+			.main-image-div {
+				text-align: center;
+				img {
+					padding-left: 0px;
+				}
+			}
+		}
+		.roadmap {
+			.inner-div-main {
+				width: 100%;
+				height: 181px;
+				padding-left: 20px;
+				padding-top: 11px;
+				padding-right: 10px;
+				margin: 50px 28px 0px;
+				p {
+					font-size: 16px;
+				}
+			}
+			.inner-div-mains {
+				width: 100%;
+				height: 181px;
+				padding-left: 20px;
+				padding-top: 11px;
+				padding-right: 10px;
+				margin: 320px -28px 0px;
+				p {
+					font-size: 16px;
+				}
+			}
+			.main-inner-image-side {
+				left: 48%;
+			}
+		}
+		.transaction {
+			height: auto;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+}
+@media (max-width: 600px) {
+	.landing-nft {
+		.header-section {
+			.main-head {
+				.header-button {
+					margin-top: 22px;
+				}
+				h1 {
+					line-height: 44px;
+					font-size: 26px;
+				}
+				p {
+					padding-right: 12px;
+					padding-left: 12px;
+				}
+				text-align: center;
+				padding: 118px 0px !important;
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				.first-second {
+					padding-bottom: 52px;
+				}
+				.owl-carousel {
+					.owl-nav {
+						button.owl-next {
+							right: 322px !important;
+						}
+						button.owl-prev {
+							left: 322px !important;
+						}
+					}
+				}
+				.heading-recent {
+					p {
+						padding: 0px 28px 20px;
+					}
+				}
+				margin-top: -277px;
+			}
+		}
+		.why-invest {
+			margin-top: 55px;
+			.text-left {
+				h1 {
+					padding-right: 0px;
+				}
+			}
+		}
+		.why-does-our-token {
+			.main-image-div {
+				img {
+					width: 74%;
+				}
+			}
+			margin-top: 55px;
+		}
+		.transaction {
+			padding-bottom: 90px;
+			.inner-div-card {
+				margin: 45px auto 10px;
+				h1 {
+					font-size: 54px;
+				}
+			}
+		}
+		.roadmap {
+			.inner-div-mains {
+				margin: 74px auto 0px;
+			}
+			.inner-div-main {
+				margin: 50px 0px 0px;
+			}
+			height: auto;
+			padding-bottom: 146px;
+			.main-inner-image-side {
+				display: none;
+			}
+		}
+	}
+}
+@media (max-width: 400px) {
+	.landing-nft {
+		.header-section {
+			.main-head {
+				.header-button {
+					margin-right: 0px;
+					margin-left: 10px;
+				}
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				margin-top: -255px;
+				.owl-carousel {
+					.owl-nav {
+						button.owl-next {
+							right: 194px !important;
+							bottom: 98%;
+						}
+						button.owl-prev {
+							left: 206px !important;
+							bottom: 98%;
+						}
+					}
+				}
+				.heading-recent {
+					p {
+						padding: 0px 15px 50px;
+					}
+					h1 {
+						line-height: 34px;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 360px) {
+	.landing-nft {
+		.header-section {
+			.main-head {
+				.header-button {
+					margin-right: 0px;
+					margin-left: 6px;
+					font-size: 14px;
+					padding: 10px 36px;
+				}
+				p {
+					padding-right: 0px;
+					padding-left: 0px;
+				}
+				h1 {
+					font-size: 24px;
+				}
+			}
+		}
+		.recently-obtain-nft {
+			.main-caresousal {
+				.owl-carousel {
+					.owl-nav {
+						button.owl-next {
+							right: 162px !important;
+						}
+						button.owl-prev {
+							left: 168px !important;
+						}
+					}
+				}
+				margin-top: -218px;
+			}
+		}
+		.why-invest {
+			.text-left {
+				p {
+					padding-bottom: 10px;
+				}
+			}
+		}
+		.roadmap {
+			.inner-div-mains {
+				p {
+					font-size: 15px;
+				}
+				width: 263px;
+				height: auto;
+				padding-bottom: 1px;
+			}
+			.inner-div-main {
+				p {
+					font-size: 15px;
+				}
+				width: 263px;
+				height: auto;
+				padding-bottom: 1px;
+			}
+			.heading-text {
+				padding-top: 20px;
+			}
+		}
+	}
+}

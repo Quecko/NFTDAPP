@@ -8,8 +8,7 @@ import MuiPhoneInput from 'material-ui-phone-number';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import './index.css';
-
+import './index.scss';
 
 import { web3 } from '../../store/web3';
 import { message, networkId, explorer } from '../../store/config';
@@ -36,8 +35,10 @@ class Navbar extends Component {
         let { } = this.props;
         return (
             <div className="main-header">
+                  <div className="container-fluid">
+                  <div className="row">
+              <div className="col-md-11 offset-md-1 m-auto p-md-0">
                 <nav className="navbar navbar-expand-lg">
-                    <div className="container-fluid">
                         <Link className="navbar-brand" to="/"><img src={require("../../static/images/landing-nftdapp/logo-header.png")} alt="" /></Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -87,8 +88,12 @@ class Navbar extends Component {
                                 </ModalBody>
                             </Modal>
                         </div>
-                    </div>
+                    
+                   
                 </nav>
+                </div>
+            </div>
+            </div>
             </div>
         );
     }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Phone, Room, Email } from '@material-ui/icons'
 import { Link } from 'react-router-dom';
-import './index.css';
+
+import './index.scss';
 
 class Footer extends Component {
     constructor(props) {
