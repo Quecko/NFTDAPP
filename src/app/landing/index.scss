@@ -7,6 +7,12 @@
 		width: 100%;
 		background-size: cover;
 		background-position: top center;
+		.banner-video{
+			position: absolute;
+			background-size: cover;
+			width: 100%;
+			object-fit: cover;
+		}
 		.main-heads-one {
 			position: absolute;
 			left: 0;
@@ -41,7 +47,7 @@
 				}
 			}
 			text-align: center;
-			padding: 75px 230px 0px;
+			padding: 230px 230px 0px;
 			padding-bottom: 0px;
 			position: relative;
 		}
@@ -398,7 +404,10 @@
 		.header-section {
 			height: 1135px;
 			.main-heads-one {
-				height: 1135px;
+				height: 1212px;
+			}
+			.main-head {
+
 			}
 		}
 		.recently-obtain-nft {
@@ -411,9 +420,9 @@
 @media (max-width: 1680px) {
 	.landing-nft {
 		.header-section {
-			height: 1006px;
+			height: 1065px;
 			.main-heads-one {
-				height: 1006px;
+				height: 1065px;
 			}
 			.main-head {
 				h1 {
@@ -434,9 +443,9 @@
 @media (max-width: 1600px) {
 	.landing-nft {
 		.header-section {
-			height: 950px;
+			height: 1012px;
 			.main-heads-one {
-				height: 950px;
+				height: 1012px;
 			}
 			.main-head {
 				h1 {
@@ -457,9 +466,9 @@
 @media (max-width: 1500px) {
 	.landing-nft {
 		.header-section {
-			height: 850px;
+			height: 920px;
 			.main-heads-one {
-				height: 850px;
+				height: 920px;
 			}
 			.main-head {
 				h1 {
@@ -473,7 +482,7 @@
 		}
 		.recently-obtain-nft {
 			.main-caresousal {
-				margin-top: -280px;
+				margin-top: -329px;
 			}
 		}
 	}
@@ -492,13 +501,19 @@
 @media (max-width: 1199px) {
 	.landing-nft {
 		.header-section {
+			.main-heads-one{
+				height: 1010px;
+			}
+			.banner-video{
+				height: 900px;
+			}
 			.main-head {
 				h1 {
 					font-size: 30px;
 					padding-bottom: 0px;
 				}
 				text-align: center;
-				padding: 75px;
+				padding: 175px 100px;
 				p {
 					padding-right: 30px;
 					padding-left: 30px;
@@ -507,6 +522,7 @@
 		}
 		.recently-obtain-nft {
 			.main-caresousal {
+				margin-top: -422px;
 				.owl-carousel {
 					.owl-nav {
 						button.owl-next {
@@ -586,7 +602,7 @@
 		.header-section {
 			.main-head {
 				text-align: center;
-				padding: 18px 34px 156px;
+				padding: 154px 34px 0px;
 			}
 		}
 		.recently-obtain-nft {
@@ -612,7 +628,7 @@
 						padding: 0px 104px 20px;
 					}
 				}
-				margin-top: -334px;
+				margin-top: -414px;
 			}
 		}
 		.why-invest {
@@ -683,7 +699,7 @@
 					padding-left: 12px;
 				}
 				text-align: center;
-				padding: 0px 0px !important;
+				padding: 120px 0px !important;
 			}
 		}
 		.recently-obtain-nft {
@@ -706,7 +722,7 @@
 						padding: 0px 28px 20px;
 					}
 				}
-				margin-top: -240px;
+				margin-top: -308px;
 			}
 		}
 		.why-invest {
@@ -761,7 +777,7 @@
 		}
 		.recently-obtain-nft {
 			.main-caresousal {
-				margin-top: -255px;
+				margin-top: -322px;
 				.owl-carousel {
 					.owl-nav {
 						button.owl-next {
@@ -817,7 +833,7 @@
 						}
 					}
 				}
-				margin-top: -218px;
+				margin-top: -320px;
 			}
 		}
 		.why-invest {

@@ -8,6 +8,13 @@
 		width: 100%;
 		background-size: cover;
 		background-position: top center;
+        .banner-video{
+			position: absolute;
+			background-size: cover;
+			width: 100%;
+			object-fit: cover;
+            height: 900px;
+		}
 		.main-heads-one {
 			position: absolute;
 			left: 0;
@@ -421,12 +428,12 @@
 		.header-section {
 			height: 1135px;
 			.main-heads-one {
-				height: 1135px;
+				height: 1000px;
 			}
 		}
 		.recently-obtain-nft {
 			.main-caresousal {
-				margin-top: -650px;
+				margin-top: -750px;
 			}
 		}
 	}
@@ -460,7 +467,7 @@
 		.header-section {
 			height: 950px;
 			.main-heads-one {
-				height: 950px;
+				height: 1000px;
 			}
 			.main-head {
 				h1 {
@@ -481,9 +488,12 @@
 @media (max-width: 1500px) {
 	.landing-nft.main-collection {
 		.header-section {
+            .banner-video{
+                height: 820px;
+            }
 			height: 850px;
 			.main-heads-one {
-				height: 850px;
+				height: 900px;
 			}
 			.main-head {
                 padding: 230px 170px;

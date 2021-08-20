@@ -55,11 +55,11 @@ class Landing extends Component {
         <Navbar />
 
 
-        <section className="header-section" style={{ backgroundImage: `url(${require("../../static/images/landing-nftdapp/background.png")})` }}>
+        <section className="header-section">
         <video className="banner-video"
               autoPlay loop muted
             >
-              <source src="../../static/images/landing-nftdapp/Space Technology-1.m4v" type="video/m4v" />
+              <source src={require("../../static/images/landing-nftdapp/landing-bac-vid.mp4")} type="video/mp4" />
             </video>
           <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" />
           <div className="auto-container">
