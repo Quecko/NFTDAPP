@@ -56,7 +56,11 @@ class Landing extends Component {
 
 
         <section className="header-section" style={{ backgroundImage: `url(${require("../../static/images/landing-nftdapp/background.png")})` }}>
-          {/* <img src={require("../../static/images/landing-nftdapp/.png")} className="main-heads-one" alt="" /> */}
+        <video className="banner-video"
+              autoPlay loop muted
+            >
+              <source src="../../static/images/landing-nftdapp/Space Technology-1.m4v" type="video/m4v" />
+            </video>
           <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" />
           <div className="auto-container">
             <div className="main-head">
