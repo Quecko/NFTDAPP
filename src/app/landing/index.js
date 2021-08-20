@@ -155,7 +155,7 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-11 offset-md-1 m-auto p-md-0">
                 <div className="row">
-                  <div className="col-xl-6 col-lg-6 col-md-12 col-12 p-0">
+                  <div className="col-xl-6 col-lg-6 col-md-12 col-12 p-md-0">
                     <div className="text-left headinghp">
                       <h1>WHY INVEST WITH NFTDAPP?</h1>
                       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam.</p>
@@ -163,7 +163,7 @@ class Landing extends Component {
                       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam.</p>
                     </div>
                   </div>
-                  <div className="col-xl-6 col-lg-6 col-md-12 col-12 p-0">
+                  <div className="col-xl-6 col-lg-6 col-md-12 col-12 p-md-0">
                     <div className="main-image-div">
                       <img src={require("../../static/images/landing-nftdapp/Illustration.png")} className="" alt="" />
                     </div>
@@ -179,12 +179,12 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-11 offset-md-1 m-auto p-md-0">
                 <div className="row">
-                  <div className="col-lg-6 col-md-12 col-12 p-0">
+                  <div className="col-lg-6 col-md-12 col-12 p-md-0">
                     <div className="main-image-div">
                       <img src={require("../../static/images/landing-nftdapp/Illustration-1.png")} className="" alt="" />
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-12 col-12 p-0">
+                  <div className="col-lg-6 col-md-12 col-12 p-md-0">
                     <div className="text-leftt headinghp">
                       <h1>WHAT DOES OUR TOKEN GIVE YOU?</h1>
                       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem aperiam.</p>

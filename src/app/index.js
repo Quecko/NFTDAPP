@@ -7,7 +7,8 @@ import CheckCircle from '@material-ui/icons/CheckCircle';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Landing from './landing';
-// import '../static/css/style.css';
+import Collection from './collection';
+
 import '../static/css/style.scss';
 
 import 'jquery/dist/jquery.min.js';
@@ -26,11 +27,11 @@ class App extends Component {
     this.state = {}
   };
 
-  componentDidMount() {
-    EventBus.on('tokenExpired', () => this.props.logout());
-    EventBus.on('error', (e) => toast.error(() => <div> <Error /> {e}</div>));
-    EventBus.on('success', (e) => toast.success(() => <div> <CheckCircle /> {e}</div>));
-  };
+  // componentDidMount() {
+  //   EventBus.on('tokenExpired', () => this.props.logout());
+  //   EventBus.on('error', (e) => toast.error(() => <div> <Error /> {e}</div>));
+  //   EventBus.on('success', (e) => toast.success(() => <div> <CheckCircle /> {e}</div>));
+  // };
 
   render() {
 
@@ -45,6 +46,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={props => <Landing {...props} />} />
             <Route exact path='/landing' component={props => <Landing {...props} />} />
+            <Route exact path='/collection' component={props => <Collection {...props} />} />
           </Switch>
         </Router>
       

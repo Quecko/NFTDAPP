@@ -57,7 +57,7 @@ class Navbar extends Component {
                                 </li>
                                 <li className="nav-item active">
                                     {/* <Link className="nav-link  pr-lg-4" href="/poolss">Pool  <span className="sr-only">(current)</span></Link> */}
-                                    <Link className='nav-link pr-lg-3' to='/sign-in'>NFTCOLLECTIONS</Link>
+                                    <Link className='nav-link pr-lg-3' to='/collection'>NFT COLLECTIONS</Link>
                                 </li>
                             </ul>
 
@@ -66,9 +66,9 @@ class Navbar extends Component {
                                 {/* <button className="button-one" type="button">Connect Wallet</button> */}
                             </div>
                             {/* ------------------Connect Wallet MODAL----------------- */}
-                            <Modal isOpen={this.state.isWallet} toggle={()=>this.SetWallet()}  className="register-modal connect-modal">
-                                <ModalHeader toggle={()=>this.SetWallet()}>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            {/* <Modal isOpen={this.state.isWallet} toggle={()=>this.SetWallet()}  className="register-modal connect-modal">
+                                <ModalHeader toggle={()=>this.SetWallet()} className="header-new">
+                                    <button type="button" class="close close-new" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </ModalHeader>
@@ -86,7 +86,7 @@ class Navbar extends Component {
                                         <p className="main-term">By connecting, I accept LEOCORN's   <Link className="link-scan" href="#">Terms of Service</Link></p>
                                     </div>
                                 </ModalBody>
-                            </Modal>
+                            </Modal> */}
                         </div>
                     
                    

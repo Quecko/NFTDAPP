@@ -117,16 +117,16 @@ html{
 	}
 	.modal-header {
 		border: none;
-		padding: 2rem 1rem !important;
+		padding: 0rem 1rem !important;
 	}
 	.modal-content {
-		border-radius: 15px;
-		position: relative;
-		background-color: #0F0E13;
-		background-size: cover;
+		background: #200F70;
+		border: 1px solid #5A49A9;
+		box-sizing: border-box;
+		box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.25);
+		border-radius: 20px;
 		width: 100%;
-		border: 1px solid #00D1FF33;
-		background-position: top center;
+		position: relative;
 		.modal-body {
 			.white-listed {
 				.paragraph2 {
@@ -145,10 +145,13 @@ html{
 		-moz-box-shadow: 0px 4px 33px 3px rgba(0,0,0,0.60);
 		shadow: 0px 4px 33px 3px rgba(0,0,0,0.60);
 		margin: 150px auto;
-		max-width: 660px;
+		max-width: 863px;
 	}
 	.modal-body {
 		padding-bottom: 40px;
+		padding-top: 38px;
+		padding-left: 25px;
+		padding-right: 18px;
 	}
 	.register-modal {
 		position: relative;
@@ -172,16 +175,17 @@ html{
 .modal-header {
 	display: unset !important;
 	.close {
-		padding: 0.5rem 0.7rem !important;
+		padding: 0.5rem 0.8rem !important;
 		margin: -1rem 0rem -1rem auto !important;
 	}
 	button.close {
 		opacity: 1;
-		color: #00D1FF;
-		background-color: #2B3546;
+		color: #200F70;
+		background: #C4B9F8;
+		border: 1px solid #5A49A9;
 		position: absolute;
-		right: 30px;
-		top: 44px;
+		right: -26px;
+		top: -9px;
 		border-radius: 50%;
 		box-shadow: none;
 		outline: none;
@@ -193,7 +197,7 @@ html{
 	}
 	button {
 		span {
-			font-size: 46px;
+			font-size: 34px;
 		}
 		outline: none;
 		box-shadow: none;
@@ -203,7 +207,7 @@ html{
 	.modal-open {
 		.modal-dialog {
 			margin: 150px auto;
-			max-width: 594px;
+			max-width: 863px;
 		}
 	}
 }
@@ -211,11 +215,17 @@ html{
 	.modal-open {
 		.modal-dialog {
 			margin: 150px auto;
-			max-width: 594px;
+			max-width: 810px;
 		}
 	}
 }
 @media (max-width: 1199px) {
+	.modal-open {
+		.modal-dialog {
+			margin: 150px auto;
+			max-width: 710px;
+		}
+	}
 	.headinghp {
 		h1 {
 			font-size: 30px;
@@ -226,6 +236,12 @@ html{
 	}
 }
 @media (max-width: 991px) {
+	.modal-open {
+		.modal-dialog {
+			margin: 150px auto;
+			max-width: 614px;
+		}
+	}
 	.headinghp {
 		h1 {
 			font-size: 28px;
@@ -249,15 +265,20 @@ html{
 			padding: 0.3rem 0.5rem !important;
 			margin: -1rem 0rem -1rem auto !important;
 			padding: 0.3rem 0.5rem !important;
+			right: -10px!important;
+			top: -7px!important;
 		}
 	}
 	.modal-open {
 		.modal-dialog {
 			max-width: 390px !important;
+			margin: 79px auto;
 		}
 		.modal-body {
 			padding-bottom: 18px;
 			padding-top: 22px;
+			padding-left: 18px;
+    		padding-right: 18px;
 		}
 	}
 }
@@ -272,6 +293,10 @@ html{
 		.modal-dialog {
 			margin: 127px auto !important;
 			max-width: 344px !important;
+		}
+		.modal-body {
+			padding-left: 3px;
+    		padding-right: 3px;
 		}
 	}
 }
