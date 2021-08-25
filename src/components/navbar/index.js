@@ -1,38 +1,27 @@
 import EventBus from 'eventing-bus';
 import { Link } from 'react-router-dom';
-import React, { Component } from 'react';
-import { Modal, ModalHeader, ModalBody, Button } from "reactstrap";
-import { HashLink } from 'react-router-hash-link';
-import { connect } from "react-redux";
-import MuiPhoneInput from 'material-ui-phone-number';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import React, { useState, Component } from 'react';
+import { useWeb3React } from '@web3-react/core'
+import useAuth from '../../hooks/useAuth'
 import './index.scss';
-
-import { web3 } from '../../store/web3';
-import { message, networkId, explorer } from '../../store/config';
 
 import { } from "../../store/actions/Auth";
 
-class Navbar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isWallet:false,
-        };
+const Navbar=()=> {
+    const { account } = useWeb3React();
+    const { login, logout } = useAuth();
+
+    const ConnectionHandler = () => {
+        if (account) {
+            logout()
+        } else {
+            login("injected")
+        }
     }
 
-    connectWallet = async () => {
-            this.setState({ isWallet:true })
-    };
-    SetWallet=()=>{
-        this.setState({ isWallet:false })
-    }
 
-    render() {
-        let { } = this.state;
-        let { } = this.props;
+
+   
         return (
             <div className="main-header">
                   <div className="container-fluid">
@@ -53,7 +42,7 @@ class Navbar extends Component {
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item active">
                                     {/* <Link className="nav-link  pr-lg-4" href="/poolss">Pool  <span className="sr-only">(current)</span></Link> */}
-                                    <Link className='nav-link pr-lg-3' to='/sign-in'>HOME</Link>
+                                    <Link className='nav-link pr-lg-3' to='/'>HOME</Link>
                                 </li>
                                 <li className="nav-item active">
                                     {/* <Link className="nav-link  pr-lg-4" href="/poolss">Pool  <span className="sr-only">(current)</span></Link> */}
@@ -62,7 +51,7 @@ class Navbar extends Component {
                             </ul>
 
                             <div className="button-head">
-                            <button className="button-one" type="button" onClick={this.connectWallet}>Connect Wallet</button>
+                            <button className="button-one" type="button" onClick={ConnectionHandler}>{account ? "Disconnect Wallet" : "Connect Wallet"}</button>
                                 {/* <button className="button-one" type="button">Connect Wallet</button> */}
                             </div>
                             {/* ------------------Connect Wallet MODAL----------------- */}
@@ -96,14 +85,6 @@ class Navbar extends Component {
             </div>
             </div>
         );
-    }
 }
 
-const mapDispatchToProps = {};
-
-const mapStateToProps = ({ Auth }) => {
-    let { } = Auth;
-    return {}
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default Navbar;
