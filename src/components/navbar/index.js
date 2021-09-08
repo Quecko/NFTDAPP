@@ -1,6 +1,5 @@
-import EventBus from 'eventing-bus';
 import { Link } from 'react-router-dom';
-import React, { useState, Component } from 'react';
+import React from 'react';
 import { useWeb3React } from '@web3-react/core'
 import useAuth from '../../hooks/useAuth'
 import './index.scss';
@@ -14,8 +13,10 @@ const Navbar = () => {
     const ConnectionHandler = () => {
         if (account) {
             logout()
+            localStorage.setItem('flag',false)
         } else {
             login("injected")
+            localStorage.setItem('flag',true)
         }
     }
      

@@ -1,14 +1,9 @@
-import EventBus from "eventing-bus";
 import { connect } from "react-redux";
 import React, { Component } from 'react';
-import { TextField } from '@material-ui/core';
-import { Send, CheckCircle, Info, Error, Done, Facebook, Twitter, Instagram, LinkedIn, LiveTvRounded } from '@material-ui/icons';
 import OwlCarousel from 'react-owl-carousel';
-import './index.scss';
-import { Link } from 'react-router-dom';
+import './landing.scss';
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 class Landing extends Component {
   constructor(props) {
@@ -143,7 +138,6 @@ class Landing extends Component {
                               </div>
                             </div>
                           </div>
-
                         </OwlCarousel>
                       </div>
                     </div>
@@ -286,9 +280,7 @@ class Landing extends Component {
             </div>
           </div>
         </section>
-
         <Footer />
-
       </div>
     );
   }

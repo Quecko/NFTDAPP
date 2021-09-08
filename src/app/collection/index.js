@@ -1,68 +1,71 @@
-import EventBus from "eventing-bus";
-import { connect } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { useWeb3React } from '@web3-react/core'
-import { TextField } from '@material-ui/core';
-import { Send, CheckCircle, Info, Error, Done, Facebook, Twitter, Instagram, LinkedIn, LiveTvRounded } from '@material-ui/icons';
 import OwlCarousel from 'react-owl-carousel';
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { css } from "@emotion/react";
+import RingLoader from "react-spinners/RingLoader";
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
+import Myloader from '../../components/Myloader';
+import ReactPaginate from 'react-paginate';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-
+// const override = css`
+//   display: block;
+//   margin: 0 auto;
+//   position: relative;
+//   top: 144px;
+//   margin-top: 100px;
+//   color: #2dc6fe;
+//   background-color: rgba(0, 0, 0, 0.5);
+// `;
 const Collection = () => {
-
+    let [loading, setLoading] = useState(false);
     const { account } = useWeb3React();
     console.log('account', account)
-
+    const [offset, setOffset] = useState(0);
     const [nft, setNft] = useState([])
     const [newlisting, setListing] = useState([])
-
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {
-    //         iscollection: false,
-    //     };
-    // };
-
-    const getAllNft = () =>  {
-         axios.post("http://ec2-34-215-106-249.us-west-2.compute.amazonaws.com:3001/nft/getAllNftsOfWallet", { walletAddress: '0xc896866e927e6f8a416ba209976115e79fa0a66f' })
+    const [perPage] = useState(8);
+    const [pageCount, setPageCount] = useState(0)
+    const getAllNft = () => {
+        setLoading(true)
+        axios.get("http://192.168.18.71:3000/nft/getAllNftOfEth")
             .then(async (response) => {
                 // setNft(response.data.data)
-                let array = response.data.data.slice(0, 8)
+                // let array = response.data.data.slice(0, 8)
+                const array = response.data.data.slice(offset, offset + perPage)
+
                 let promises = []
 
-                for(let elem of array) {
+                for (let elem of array) {
                     promises.push(axios.get(elem.token_uri));
-                   
                 }
-
-
                 let mainData = await Promise.all(promises)
-               let tempData = array.map((elem, i) =>{
-                return (
-                    <div className="col-lg-3 col-md-4 col-12">
-                        <div className="card card-width" onClick={collection}>
-                            <div className="upper-divs-triple">
-                                <img src={mainData[i].data.image} className="" alt="" />
-                            </div>
-                            <div className="lower-textss">
-                                <h1>{elem.name} {elem.token_id}</h1>
-                                <p>For sale for <span>0.04 ETH ($131.31)</span></p>
+                let tempData = array.map((elem, i) => {
+                    return (
+                        <div className="col-lg-3 col-md-4 col-12">
+                            <div className="card card-width" onClick={collection}>
+                                <div className="upper-divs-triple">
+                                    <img src={mainData[i].data.image} className="" alt="" />
+                                </div>
+                                <div className="lower-textss">
+                                    <h1>{elem.name} {elem.token_id}</h1>
+                                    <p>For sale for <span>0.04 ETH ($131.31)</span></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )
-               })
-               
-
+                    )
+                })
                 setListing(tempData)
-
+                setPageCount(Math.ceil(array.length / perPage))
+                setLoading(false)
             });
     }
+    const handlePageClick = (e) => {
+        const selectedPage = e.selected;
+        setOffset(selectedPage + 1)
+    };
 
     const [open, setOpen] = useState(false)
 
@@ -76,7 +79,6 @@ const Collection = () => {
 
     const owl_option = {
         margin: 40,
-
         nav: true,
         dots: true,
         dotsEach: true,
@@ -129,11 +131,10 @@ const Collection = () => {
 
 
     return (
+
+
         <div className='landing-nft main-collection'>
-
             <Navbar />
-
-
             <section className="header-section">
                 <video className="banner-video"
                     autoPlay loop muted
@@ -141,11 +142,14 @@ const Collection = () => {
                     <source src={require("../../static/images/landing-nftdapp/landing-bac-vid.mp4")} type="video/mp4" />
                 </video>
                 <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" />
+               <Myloader active={loading}/>
+               
                 <div className="auto-container">
                     <div className="main-head">
                         <h1>YOU OWN 10% ($324.45) OF OUR COLLECTION</h1>
                     </div>
                 </div>
+               
             </section>
 
             <section className="recently-obtain-nft">
@@ -218,7 +222,6 @@ const Collection = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </OwlCarousel>
                                         </div>
                                     </div>
@@ -238,7 +241,21 @@ const Collection = () => {
                                 <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button>
                             </div>
                             <div className="row">
-                                 {newlisting}
+                                {newlisting}
+
+                                <ReactPaginate
+                                    previousLabel={"prev"}
+                                    nextLabel={"next"}
+                                    breakLabel={"..."}
+                                    breakClassName={"break-me"}
+                                    pageCount={pageCount}
+                                    marginPagesDisplayed={2}
+                                    pageRangeDisplayed={5}
+                                    onPageChange={handlePageClick}
+                                    containerClassName={"pagination"}
+                                    subContainerClassName={"pages pagination"}
+                                    activeClassName={"active"} />
+
                                 {/* <div className="col-lg-3 col-md-4 col-12">
                                     <div className="card card-width" onClick={collection}>
                                         <div className="upper-divs-triple">
@@ -451,9 +468,7 @@ const Collection = () => {
                     </div>
                 </ModalBody>
             </Modal>
-
             <Footer />
-
         </div>
     );
 
