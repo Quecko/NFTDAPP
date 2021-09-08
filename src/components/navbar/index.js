@@ -15,7 +15,7 @@ const Navbar = () => {
             logout()
             localStorage.setItem('flag',false)
         } else {
-            login("injected")
+            login("walletconnect")
             localStorage.setItem('flag',true)
         }
     }

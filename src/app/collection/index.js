@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useWeb3React } from '@web3-react/core'
 import OwlCarousel from 'react-owl-carousel';
 import './index.scss';
-import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
@@ -50,7 +49,7 @@ const Collection = () => {
                                     <img src={mainData[i].data.image} className="" alt="" />
                                 </div>
                                 <div className="lower-textss">
-                                    <h1>{elem.name} {elem.token_id}</h1>
+                                    <h1>{elem.uriData.name} </h1>
                                     <p>For sale for <span>0.04 ETH ($131.31)</span></p>
                                 </div>
                             </div>
