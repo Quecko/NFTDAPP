@@ -164,8 +164,9 @@
 		.first-second {
 			.owl-carousel {
 				.owl-item {
+					
 					img {
-						width: 89%;
+						width: 100%;
 						margin: 0 auto;
 						padding-top: 16px;
 					}
@@ -178,6 +179,19 @@
 			}
 			.slider-items {
 				.card-width {
+					.upper-divs-triple{
+						text-align: center;
+						width: 200px;
+						margin: 0 auto;
+		
+						img {
+							width: 100%;
+							margin: 0 auto;
+							padding-top: 16px;
+							border-radius: 16px;
+						}
+						
+					}
 					.lower-textss {
 						h1 {
 							font-family: 'Rubik';

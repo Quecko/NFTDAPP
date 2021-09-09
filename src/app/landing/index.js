@@ -80,7 +80,6 @@ class Landing extends Component {
                   <div className="row">
                     <div className="col-lg-10 offset-lg-1 col-md-12 offset-md-0 p-md-0">
                       <div className="first-second">
-
                         <OwlCarousel className="slider-items owl-carousel ltf-owl" autoplaySpeed={5000}  {...owl_option}>
                           <div className="item">
                             <div className="card card-width">

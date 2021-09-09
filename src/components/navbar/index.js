@@ -1,21 +1,37 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
+import React,  { useState} from 'react';
 import { useWeb3React } from '@web3-react/core'
 import useAuth from '../../hooks/useAuth'
 import './index.scss';
-
+import { Modal, ModalHeader, ModalBody} from "reactstrap";
 import { } from "../../store/actions/Auth";
 
 const Navbar = () => {
     const { account } = useWeb3React();
     const { login, logout } = useAuth();
+    const [open, setOpen] = useState(false)
+    const collection = ()=> {
+        if(account){
+            logout()
+            localStorage.setItem('flag',false)
+            setOpen(false)  
+        }else{
+
+            setOpen(true)
+        }
+         
+    }
+
+    const close = async () => {
+        setOpen(false)
+    };
 
     const ConnectionHandler = () => {
         if (account) {
             logout()
             localStorage.setItem('flag',false)
         } else {
-            login("walletconnect")
+            login("injected")
             localStorage.setItem('flag',true)
         }
     }
@@ -49,31 +65,31 @@ const Navbar = () => {
                                 </ul>
 
                                 <div className="button-head">
-                                    <button className="button-one" type="button" onClick={ConnectionHandler}>{account ? "Disconnect Wallet" : "Connect Wallet"}</button>
-                                    {/* <button className="button-one" type="button">Connect Wallet</button> */}
+                                    <button className="button-one" type="button" onClick={collection}>{account?"Disconnect Wallet":"Connect Wallet"}</button>
                                 </div>
                                 {/* ------------------Connect Wallet MODAL----------------- */}
-                                {/* <Modal isOpen={this.state.isWallet} toggle={()=>this.SetWallet()}  className="register-modal connect-modal">
-                                <ModalHeader toggle={()=>this.SetWallet()} className="header-new">
-                                    <button type="button" class="close close-new" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                <Modal isOpen={open} toggle={()=>this.SetWallet()}  className="register-modal connect-modal">
+                                <ModalHeader className="header-new">
+                                <button type="button" class="close" data-dismiss="modal" onClick={close} aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>               
                                 </ModalHeader>
                                 <ModalBody className="modal-body">
                                     <div className="container main-divs">
                                         <h1>Select Wallet Provider</h1>
-                                        <div className="meta-mask">
-                                            <Link className="main-link-meta" href="#"><img src={require("../../static/images/landing-leocorn/Group 16.png")} alt="" /></Link>
+                                        <div className="meta-mask">   
+                                            <button className="btn1"  onClick={ConnectionHandler}>
+                                            <Link className="main-link-meta" href="#"><img src={require("../../static/images/landing-leocorn/Group 16.png")} alt="" /> </Link>
+                                            </button>
                                         </div>
                                         <div className="scan-wallet">
                                             <Link className="main-link-meta" href="#"><img src={require("../../static/images/landing-leocorn/sacn-wallet.png")} alt="" /></Link>
                                             <h1>WalletConnect</h1>
                                             <Link className="link-scan" href="#"><p>Scan with WalletConnect to Connect</p></Link>
                                         </div>
-                                        <p className="main-term">By connecting, I accept LEOCORN's   <Link className="link-scan" href="#">Terms of Service</Link></p>
                                     </div>
                                 </ModalBody>
-                            </Modal> */}
+                            </Modal>
                             </div>
                         </nav>
                     </div>

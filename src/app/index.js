@@ -29,10 +29,8 @@ const App=()=>  {
                 <Route exact path='/collection' component={props => <Collection {...props} />} />
               </Switch>
             </Router>
-       
       </div>
     );
-  
 }
 
 export default App;

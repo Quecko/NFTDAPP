@@ -3,36 +3,26 @@ import axios from 'axios'
 import { useWeb3React } from '@web3-react/core'
 import OwlCarousel from 'react-owl-carousel';
 import './index.scss';
-import RingLoader from "react-spinners/RingLoader";
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
 import Myloader from '../../components/Myloader';
 import ReactPaginate from 'react-paginate';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-// const override = css`
-//   display: block;
-//   margin: 0 auto;
-//   position: relative;
-//   top: 144px;
-//   margin-top: 100px;
-//   color: #2dc6fe;
-//   background-color: rgba(0, 0, 0, 0.5);
-// `;
+import { Modal, ModalHeader, ModalBody} from "reactstrap";
 const Collection = () => {
     let [loading, setLoading] = useState(false);
     const { account } = useWeb3React();
     console.log('account', account)
     const [offset, setOffset] = useState(0);
-    const [nft, setNft] = useState([])
     const [newlisting, setListing] = useState([])
     const [perPage] = useState(8);
     const [pageCount, setPageCount] = useState(0)
+    let tempData;
     const getAllNft = () => {
         setLoading(true)
-        axios.get("http://192.168.18.71:3000/nft/getAllNftOfEth")
+        axios.get("http://54.191.140.38:2600/nft/getAllNftOfEth")
             .then(async (response) => {
                 // setNft(response.data.data)
-                // let array = response.data.data.slice(0, 8)
+                // let array = response.data.data.slice(10, 17)
                 const array = response.data.data.slice(offset, offset + perPage)
 
                 let promises = []
@@ -41,10 +31,10 @@ const Collection = () => {
                     promises.push(axios.get(elem.token_uri));
                 }
                 let mainData = await Promise.all(promises)
-                let tempData = array.map((elem, i) => {
+                 tempData = array.map((elem, i) => {
                     return (
                         <div className="col-lg-3 col-md-4 col-12">
-                            <div className="card card-width" onClick={collection}>
+                            <div className="card card-width" onClick={()=>collection(mainData[i])} >
                                 <div className="upper-divs-triple">
                                     <img src={mainData[i].data.image} className="" alt="" />
                                 </div>
@@ -61,15 +51,22 @@ const Collection = () => {
                 setLoading(false)
             });
     }
+
+ 
     const handlePageClick = (e) => {
         const selectedPage = e.selected;
         setOffset(selectedPage + 1)
     };
 
     const [open, setOpen] = useState(false)
-
-    const collection = async () => {
-        setOpen(true)
+    const [display, setDisplay] = useState({
+        image:'',
+        name:''
+    })
+    const collection =  (de) => {
+        setDisplay(de.data)
+        setOpen(true)  
+         
     };
     const close = async () => {
         setOpen(false)
@@ -237,7 +234,7 @@ const Collection = () => {
                         <div className="col-md-11 offset-md-1 m-auto p-md-0">
                             <div className="heading-recent headinghp">
                                 <h1>NFT Collection</h1>
-                                <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button>
+                                {/* <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button> */}
                             </div>
                             <div className="row">
                                 {newlisting}
@@ -344,7 +341,7 @@ const Collection = () => {
                         <div className="col-md-11 offset-md-1 m-auto p-md-0">
                             <div className="heading-recent headinghp">
                                 <h1>Recently Sold</h1>
-                                <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button>
+                                {/* <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button> */}
                             </div>
                             <div className="row">
                                 <div className="col-lg-3 col-md-4 col-12">
@@ -449,22 +446,22 @@ const Collection = () => {
                     </button>
                 </ModalHeader>
                 <ModalBody className="modal-body">
-                    <div className="container-fluid main-divs">
-                        <div class="row">
-                            <div className="col-md-5">
-                                <img src={require("../../static/images/collection/modal-image.png")} className="img-collection" alt="" />
-                            </div>
-                            <div className="col-md-7">
-                                <div className="text-head">
-                                    <h1>#06 EVOL Guns & Roses</h1>
-                                    <h2>For sale for</h2>
-                                    <h3>You own 10% of this NFT
-                                        i.e 0.004 ETH ($12.48)</h3>
-                                    <button type="button">VIEW ON RARIBLE</button>
-                                </div>
-                            </div>
+                <div className="container-fluid main-divs">
+                <div class="row">
+                    <div className="col-md-5">
+                        <img src={display.image} className="img-collection" alt="" />
+                    </div>
+                    <div className="col-md-7">
+                        <div className="text-head">
+                            <h1>{display.name}</h1>
+                            <h2>For sale for</h2>
+                            <h3>You own 10% of this NFT
+                                i.e 0.004 ETH ($12.48)</h3>
+                            <button type="button">VIEW ON RARIBLE</button>
                         </div>
                     </div>
+                </div>
+            </div>
                 </ModalBody>
             </Modal>
             <Footer />
