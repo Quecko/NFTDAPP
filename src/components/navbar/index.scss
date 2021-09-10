@@ -137,6 +137,24 @@
 			}
 		}
 		.scan-wallet {
+
+			.btn1{
+				background: transparent;
+				border: none;
+				outline: none;
+				cursor: pointer;
+
+				h6{
+				    text-decoration: none;
+					font-family: 'roboto';
+					font-style: normal;
+					font-weight: bold;
+					font-size: 20px;
+					line-height: 20px;
+					color: #fff;
+					padding-top: 10px;
+				}
+			}
 			h1 {
 				font-family: 'roboto';
 				font-style: normal;

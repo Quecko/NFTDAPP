@@ -33,6 +33,17 @@ const Navbar = () => {
         } else {
             login("injected")
             localStorage.setItem('flag',true)
+            localStorage.setItem('injected',"injected")
+        }
+    }
+
+    const Connect = () => {
+        if (account) {
+            logout()
+            localStorage.setItem('flag',false)
+        } else {
+            login("walletconnect")
+            localStorage.setItem('flag',true)
         }
     }
      
@@ -68,7 +79,7 @@ const Navbar = () => {
                                     <button className="button-one" type="button" onClick={collection}>{account?"Disconnect Wallet":"Connect Wallet"}</button>
                                 </div>
                                 {/* ------------------Connect Wallet MODAL----------------- */}
-                                <Modal isOpen={open} toggle={()=>this.SetWallet()}  className="register-modal connect-modal">
+                                <Modal isOpen={open}   className="register-modal connect-modal">
                                 <ModalHeader className="header-new">
                                 <button type="button" class="close" data-dismiss="modal" onClick={close} aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -83,9 +94,11 @@ const Navbar = () => {
                                             </button>
                                         </div>
                                         <div className="scan-wallet">
-                                            <Link className="main-link-meta" href="#"><img src={require("../../static/images/landing-leocorn/sacn-wallet.png")} alt="" /></Link>
-                                            <h1>WalletConnect</h1>
+                                        <button className="btn1"  onClick={Connect}>
+                                            <Link className="main-link-meta" href="#"><img src={require("../../static/images/landing-leocorn/sacn-wallet.png")} alt="" /><h6>Wallet Connect</h6></Link>
                                             <Link className="link-scan" href="#"><p>Scan with WalletConnect to Connect</p></Link>
+                                            </button>
+                                          
                                         </div>
                                     </div>
                                 </ModalBody>
