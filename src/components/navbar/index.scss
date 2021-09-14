@@ -123,13 +123,38 @@
 			text-transform: uppercase;
 			color: #00D1FF;
 		}
+		
 		.meta-mask {
-			background-color: #1E1D26;
-			padding: 36px 0px 20px;
+			background-color: transparent;
 			margin: 50px auto;
 			border-radius: 15px;
+
+			.btn1{
+				background: transparent;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
 		}
 		.scan-wallet {
+
+			.btn1{
+				background: transparent;
+				border: none;
+				outline: none;
+				cursor: pointer;
+
+				h6{
+				    text-decoration: none;
+					font-family: 'roboto';
+					font-style: normal;
+					font-weight: bold;
+					font-size: 20px;
+					line-height: 20px;
+					color: #fff;
+					padding-top: 10px;
+				}
+			}
 			h1 {
 				font-family: 'roboto';
 				font-style: normal;

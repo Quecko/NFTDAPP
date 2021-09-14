@@ -1,74 +1,65 @@
-import EventBus from "eventing-bus";
-import { connect } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { useWeb3React } from '@web3-react/core'
-import { TextField } from '@material-ui/core';
-import { Send, CheckCircle, Info, Error, Done, Facebook, Twitter, Instagram, LinkedIn, LiveTvRounded } from '@material-ui/icons';
 import OwlCarousel from 'react-owl-carousel';
 import './index.scss';
-import { Link } from 'react-router-dom';
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-
+import Myloader from '../../components/Myloader';
+import ReactPaginate from 'react-paginate';
+import { Modal, ModalHeader, ModalBody} from "reactstrap";
 const Collection = () => {
-
+    let [loading, setLoading] = useState(false);
     const { account } = useWeb3React();
     console.log('account', account)
-
-    const [nft, setNft] = useState([])
+    const [page, setpage] = useState(1);
     const [newlisting, setListing] = useState([])
-
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {
-    //         iscollection: false,
-    //     };
-    // };
-
-    const getAllNft = () =>  {
-         axios.post("http://ec2-34-215-106-249.us-west-2.compute.amazonaws.com:3001/nft/getAllNftsOfWallet", { walletAddress: '0xc896866e927e6f8a416ba209976115e79fa0a66f' })
+    const [limit] = useState(8);
+    const [pageCount, setPageCount] = useState(0)
+    const getAllNft = () => {
+        setLoading(true)
+        axios.post("http://192.168.18.71:3000/nft/getAllNftOfEth",{limit,page})
             .then(async (response) => {
                 // setNft(response.data.data)
-                let array = response.data.data.slice(0, 8)
-                let promises = []
-
-                for(let elem of array) {
-                    promises.push(axios.get(elem.token_uri));
-                   
-                }
-
-
-                let mainData = await Promise.all(promises)
-               let tempData = array.map((elem, i) =>{
-                return (
-                    <div className="col-lg-3 col-md-4 col-12">
-                        <div className="card card-width" onClick={collection}>
-                            <div className="upper-divs-triple">
-                                <img src={mainData[i].data.image} className="" alt="" />
-                            </div>
-                            <div className="lower-textss">
-                                <h1>{elem.name} {elem.token_id}</h1>
-                                <p>For sale for <span>0.04 ETH ($131.31)</span></p>
-                            </div>
-                        </div>
-                    </div>
-                )
-               })
-               
-
-                setListing(tempData)
-
+                // let array = response.data.data.slice(10, 17)
+                // const array = response.data.data.slice(page, page + limit)
+                setListing(response.data.data.ethNFT)
+                setPageCount(response.data.data.count / limit)
+                setLoading(false)
             });
     }
 
-    const [open, setOpen] = useState(false)
-
-    const collection = async () => {
-        setOpen(true)
+    const data= newlisting.map((elem) => {
+        return (
+            <div className="col-lg-3 col-md-4 col-12">
+                <div className="card card-width" onClick={()=>collection(elem)} >
+                    <div className="upper-divs-triple">
+                        <img src={elem.imageUri} className="" alt=" NO IMAGE FOUND" />
+                    </div>
+                    <div className="lower-textss">
+                        <h1>{elem.name} </h1>
+                        <p>For sale for <span>0.04 ETH ($131.31)</span></p>
+                    </div>
+                </div>
+            </div>
+        )
+    })
+    const handlePageClick = (e) => {
+        const selectedPage = e.selected;
+        setpage(selectedPage + 1)
+        getAllNft()
     };
+
+    const [open, setOpen] = useState(false)
+    const [display, setDisplay] = useState({
+        image:'',
+        name:''
+    })
+    const collection =  (de) => {
+        setDisplay({image : de.imageUri , name : de.name})
+        setOpen(true)  
+         
+    }
     const close = async () => {
         setOpen(false)
     };
@@ -76,7 +67,6 @@ const Collection = () => {
 
     const owl_option = {
         margin: 40,
-
         nav: true,
         dots: true,
         dotsEach: true,
@@ -107,7 +97,7 @@ const Collection = () => {
 
     useEffect(() => {
         getAllNft()
-    }, [account])
+    }, [account,page])
 
     // const newlisting = nft.slice(0, 8).map(async(elem) => {
     //     const url="https://api.artblocks.io/token/6279"
@@ -129,11 +119,10 @@ const Collection = () => {
 
 
     return (
+
+
         <div className='landing-nft main-collection'>
-
             <Navbar />
-
-
             <section className="header-section">
                 <video className="banner-video"
                     autoPlay loop muted
@@ -141,6 +130,8 @@ const Collection = () => {
                     <source src={require("../../static/images/landing-nftdapp/landing-bac-vid.mp4")} type="video/mp4" />
                 </video>
                 <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" />
+               {/* <Myloader active={loading}/> */}
+               
                 <div className="auto-container">
                     <div className="main-head">
                         <h1>YOU OWN 10% ($324.45) OF OUR COLLECTION</h1>
@@ -218,7 +209,6 @@ const Collection = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </OwlCarousel>
                                         </div>
                                     </div>
@@ -232,13 +222,28 @@ const Collection = () => {
             <section className="nft-collection">
                 <div className="conatiner-fluid">
                     <div className="row">
+                    
                         <div className="col-md-11 offset-md-1 m-auto p-md-0">
                             <div className="heading-recent headinghp">
                                 <h1>NFT Collection</h1>
-                                <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button>
+                                {/* <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button> */}
                             </div>
                             <div className="row">
-                                 {newlisting}
+                                
+                                {data}
+                                <ReactPaginate
+                                    previousLabel={"prev"}
+                                    nextLabel={"next"}
+                                    breakLabel={"..."}
+                                    breakClassName={"break-me"}
+                                    pageCount={pageCount}
+                                    marginPagesDisplayed={2}
+                                    pageRangeDisplayed={5}
+                                    onPageChange={handlePageClick}
+                                    containerClassName={"pagination"}
+                                    subContainerClassName={"pages pagination"}
+                                    activeClassName={"active"} />
+
                                 {/* <div className="col-lg-3 col-md-4 col-12">
                                     <div className="card card-width" onClick={collection}>
                                         <div className="upper-divs-triple">
@@ -317,6 +322,7 @@ const Collection = () => {
                                     </div>
                                 </div> */}
                             </div>
+                            <Myloader active={loading}/>
                         </div>
                     </div>
                 </div>
@@ -328,7 +334,7 @@ const Collection = () => {
                         <div className="col-md-11 offset-md-1 m-auto p-md-0">
                             <div className="heading-recent headinghp">
                                 <h1>Recently Sold</h1>
-                                <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button>
+                                {/* <button type="button">Sort By<img src={require("../../static/images/collection/arrow-d.png")} className="" alt="" /></button> */}
                             </div>
                             <div className="row">
                                 <div className="col-lg-3 col-md-4 col-12">
@@ -433,27 +439,27 @@ const Collection = () => {
                     </button>
                 </ModalHeader>
                 <ModalBody className="modal-body">
-                    <div className="container-fluid main-divs">
-                        <div class="row">
-                            <div className="col-md-5">
-                                <img src={require("../../static/images/collection/modal-image.png")} className="img-collection" alt="" />
-                            </div>
-                            <div className="col-md-7">
-                                <div className="text-head">
-                                    <h1>#06 EVOL Guns & Roses</h1>
-                                    <h2>For sale for</h2>
-                                    <h3>You own 10% of this NFT
-                                        i.e 0.004 ETH ($12.48)</h3>
-                                    <button type="button">VIEW ON RARIBLE</button>
-                                </div>
-                            </div>
+                <div className="container-fluid main-divs">
+                <div class="row">
+                    <div className="col-md-5 upper-divs-triple">
+                        <div className="text-head">
+                        <img src={display.image} className="img-collection" alt="NO Image Found" />
                         </div>
                     </div>
+                    <div className="col-md-7">
+                        <div className="text-head">
+                            <h1>{display.name}</h1>
+                            <h2>For sale for</h2>
+                            <h3>You own 10% of this NFT
+                                i.e 0.004 ETH ($12.48)</h3>
+                            <button type="button">VIEW ON RARIBLE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 </ModalBody>
             </Modal>
-
             <Footer />
-
         </div>
     );
 
