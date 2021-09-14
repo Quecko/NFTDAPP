@@ -53,8 +53,6 @@ class Landing extends Component {
       <div className='landing-nft'>
 
         <Navbar />
-
-
         <section className="header-section">
         <video className="banner-video"
               autoPlay loop muted
