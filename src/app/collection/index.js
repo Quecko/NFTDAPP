@@ -18,7 +18,7 @@ const Collection = () => {
     const [pageCount, setPageCount] = useState(0)
     const getAllNft = () => {
         setLoading(true)
-        axios.post("http://192.168.18.71:3000/nft/getAllNftOfEth",{limit,page})
+        axios.post("http://192.168.18.71:4000/nft/getAllNftOfEth",{limit,page})
             .then(async (response) => {
                 // setNft(response.data.data)
                 // let array = response.data.data.slice(10, 17)
@@ -38,7 +38,7 @@ const Collection = () => {
                     </div>
                     <div className="lower-textss">
                         <h1>{elem.name} </h1>
-                        <p>For sale for <span>0.04 ETH ($131.31)</span></p>
+                        <p>For sale for <span>{elem.price} ETH</span></p>
                     </div>
                 </div>
             </div>
