@@ -41,14 +41,14 @@ const Landing=()=> {
     };
 
     const getObatained =  () => {
-      axios.post("http://192.168.18.72:4000/nft/getAllRecentlyObtained", {})
+      axios.post("http://54.191.140.38:38451/nft/getAllRecentlyObtained", {})
           .then( (response) => {
             setobtain(response.data.data)
           }).catch(error=>{console.log('errror' , error)})
   }
 
   const getPercen = () => {
-    axios.post("http://192.168.18.72:4000/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
+    axios.post("http://54.191.140.38:38451/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
         .then(async (response) => {
             setPer(response.data.data)
         });

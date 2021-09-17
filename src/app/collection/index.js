@@ -38,10 +38,10 @@ const Collection = () => {
             })
     }
     const chain = {
-        all: "http://192.168.18.72:4000/nft/getAllNft",
-        eth: "http://192.168.18.72:4000/nft/getAllNftOfEth",
-        bsc: "http://192.168.18.72:4000/nft/getAllNftOfBsc",
-        matic: "http://192.168.18.72:4000/nft/getAllNftOfMatic",
+        all: "http://54.191.140.38:38451/nft/getAllNft",
+        eth: "http://54.191.140.38:38451/nft/getAllNftOfEth",
+        bsc: "http://54.191.140.38:38451/nft/getAllNftOfBsc",
+        matic: "http://54.191.140.38:38451/nft/getAllNftOfMatic",
 
     }
     const getAllNft = (url) => {
@@ -59,7 +59,7 @@ const Collection = () => {
 
     const getPercen = () => {
         setLoading(true)
-        axios.post("http://192.168.18.72:4000/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
+        axios.post("http://54.191.140.38:38451/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
             .then(async (response) => {
                 setPer(response.data.data)
                 // setNft(response.data.data)
@@ -68,14 +68,14 @@ const Collection = () => {
             });
     }
     const getObatained = () => {
-        axios.post("http://192.168.18.72:4000/nft/getAllRecentlyObtained")
+        axios.post("http://54.191.140.38:38451/nft/getAllRecentlyObtained")
             .then(async (response) => {
                 setObtain(response.data.data)
             });
     }
 
     const getSold = () => {
-        axios.post("http://192.168.18.72:4000/nft/getAllRecentlySold", { limit, page })
+        axios.post("http://54.191.140.38:38451/nft/getAllRecentlySold", { limit, page })
             .then(async (response) => {
                 console.log("asdfadsfas:::::", response)
                 setResSold(response.data.data)
