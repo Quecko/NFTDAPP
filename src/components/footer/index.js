@@ -22,7 +22,6 @@ class Footer extends Component {
                         <Link className='footer-social'> <img src={require("../../static/images/landing-nftdapp/footer-4.png")} alt="" /></Link>
                     </div>
                 </div>
-
             </footer>
         );
     }

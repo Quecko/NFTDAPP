@@ -77,6 +77,8 @@
 				padding-bottom: 70px;
 				.card {
 					border-radius: 20px;
+					width: auto;
+					height: 280px;
 				}
 			}
 			.first-slider {
@@ -185,7 +187,8 @@
 						margin: 0 auto;
 		
 						img {
-							width: 100%;
+							width: 200px;
+							height: 200px;
 							margin: 0 auto;
 							padding-top: 16px;
 							border-radius: 16px;

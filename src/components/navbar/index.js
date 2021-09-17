@@ -44,6 +44,7 @@ const Navbar = () => {
         } else {
             login("walletconnect")
             localStorage.setItem('flag',true)
+            localStorage.setItem('walletconnect',"walletconnect")
         }
     }
      

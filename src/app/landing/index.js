@@ -1,19 +1,15 @@
-import { connect } from "react-redux";
-import React, { Component } from 'react';
+import React, { useState , useEffect} from 'react';
+import axios from 'axios'
 import OwlCarousel from 'react-owl-carousel';
+import { useWeb3React } from '@web3-react/core'
 import './landing.scss';
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
 
-class Landing extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    };
-  };
-  render() {
+const Landing=()=> {
+  const { account } = useWeb3React();
+  let [obtain, setobtain] = useState([])
+  const [per, setPer] = useState(0)
     const owl_option = {
       margin: 40,
       nav: true,
@@ -44,12 +40,54 @@ class Landing extends Component {
       },
     };
 
+    const getObatained =  () => {
+      axios.post("http://192.168.18.72:4000/nft/getAllRecentlyObtained", {})
+          .then( (response) => {
+            setobtain(response.data.data)
+          }).catch(error=>{console.log('errror' , error)})
+  }
+
+  const getPercen = () => {
+    axios.post("http://192.168.18.72:4000/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
+        .then(async (response) => {
+            setPer(response.data.data)
+        });
+}
+
+ 
+
+  useEffect( () => {
+     getObatained()
+     getObatained()
+     getPercen()
+
+},[] )
+
+const dataObtain = obtain.map((elem) => {
+  return (
+<>
+    <div className="item">
+    <div className="card card-width">
+      <div className="upper-divs-triple">
+        <img src={elem.imageUri} className="" alt="image not found" />
+      </div>
+      <div className="lower-textss">
+        <h1>{elem.name}</h1>
+        {/* <div className="ima-with-text">
+          <img src={require("../../static/images/landing-nftdapp/image-care-lower.png")} className="image-main-lower" alt="" />
+          <p>KidEight</p>
+        </div> */}
+      </div>
+    </div>
+  </div>
+  </>
+  )
+})
+
     return (
       <div className='landing-nft'>
 
         <Navbar />
-
-
         <section className="header-section">
         <video className="banner-video"
               autoPlay loop muted
@@ -59,7 +97,7 @@ class Landing extends Component {
           <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" />
           <div className="auto-container">
             <div className="main-head">
-              <h1>YOU OWN X% OF OUR COLLECTION</h1>
+              <h1>YOU OWN {parseFloat(per).toFixed(5)} % OF OUR COLLECTION</h1>
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
               <button className="header-button" type="button">BUY</button>
               <button className="header-button" type="button">CHART</button>
@@ -81,7 +119,8 @@ class Landing extends Component {
                     <div className="col-lg-10 offset-lg-1 col-md-12 offset-md-0 p-md-0">
                       <div className="first-second">
                         <OwlCarousel className="slider-items owl-carousel ltf-owl" autoplaySpeed={5000}  {...owl_option}>
-                          <div className="item">
+                        {obtain[0] ? dataObtain : null}
+                          {/* <div className="item">
                             <div className="card card-width">
                               <div className="upper-divs-triple">
                                 <img src={require("../../static/images/landing-nftdapp/image-care1.png")} className="" alt="" />
@@ -136,7 +175,7 @@ class Landing extends Component {
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div> */}
                         </OwlCarousel>
                       </div>
                     </div>
@@ -283,14 +322,5 @@ class Landing extends Component {
       </div>
     );
   }
-}
 
-
-const mapDispatchToProps = {
-};
-
-const mapStateToProps = ({ }) => {
-  return {}
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+export default Landing

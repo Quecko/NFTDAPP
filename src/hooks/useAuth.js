@@ -19,6 +19,7 @@ const useAuth = () => {
             activate(connector)
           }
         } else {
+          connector.walletConnectProvider = undefined
           toastError(error.name, error.message)
         }
       })
