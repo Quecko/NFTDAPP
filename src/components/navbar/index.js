@@ -11,14 +11,21 @@ const Navbar = () => {
     const { login, logout } = useAuth();
     const [open, setOpen] = useState(false)
     const collection = ()=> {
+        setOpen(true) 
         if(account){
+            setOpen(false)
             logout()
-            localStorage.setItem('flag',false)
-            setOpen(false)  
-        }else{
-
-            setOpen(true)
         }
+        // if(account){
+        //     logout()
+        //     localStorage.setItem('flag',false)
+        //     setOpen(true)  
+        // }else{
+        //     login("injected" );
+        //     localStorage.setItem('flag',true)
+        //     localStorage.setItem('injected',"injected")
+        //     setOpen(false)
+        // }
          
     }
 
@@ -29,6 +36,7 @@ const Navbar = () => {
     const ConnectionHandler = () => {
         if (account) {
             logout()
+            setOpen(true) 
             localStorage.setItem('flag',false)
         } else {
             login("injected")
@@ -43,6 +51,7 @@ const Navbar = () => {
             localStorage.setItem('flag',false)
         } else {
             login("walletconnect")
+            setOpen(true) 
             localStorage.setItem('flag',true)
             localStorage.setItem('walletconnect',"walletconnect")
         }

@@ -24,7 +24,7 @@ const Collection = () => {
     console.log('account', account)
     const [page, setpage] = useState(1);
     const [newlisting, setListing] = useState([])
-    const [limit] = useState(16);
+    const [limit] = useState(12);
     const [pageCount, setPageCount] = useState(0)
     const [per, setPer] = useState(0)
     const [USD, setUSD] = useState(0)
@@ -38,6 +38,7 @@ const Collection = () => {
             })
     }
     const chain = {
+
         all: "http://54.191.140.38:38451/nft/getAllNft",
         eth: "http://54.191.140.38:38451/nft/getAllNftOfEth",
         bsc: "http://54.191.140.38:38451/nft/getAllNftOfBsc",
@@ -87,7 +88,7 @@ const Collection = () => {
             <div className="col-lg-3 col-md-4 col-12">
                 <div className="card card-width" onClick={() => collection(elem)} >
                     <div className="upper-divs-triple">
-                        <img src={elem.imageUri} className="" alt="NO IMAGE FOUND" />
+                    {elem.imageUri ? <img src={elem.imageUri} className="" alt="" /> : <img src="./image-not-found.png" className="" alt="" /> }
                     </div>
                     <div className="lower-textss">
                         <h1>{elem.name} </h1>
@@ -103,7 +104,8 @@ const Collection = () => {
             <div className="item">
                 <div className="card card-width">
                     <div className="upper-divs-triple">
-                        <img src={elem.imageUri} className="" alt="NO IMAGE FOUND" />
+                        {elem.imageUri ? <img src={elem.imageUri} className="" alt="" /> : <img src="./image-not-found.png" className="" alt="" /> }
+                        
                     </div>
                     <div className="lower-textss">
                         <h1>{elem.name}</h1>
@@ -123,11 +125,11 @@ const Collection = () => {
             <div className="col-lg-3 col-md-4 col-12">
                 <div className="card card-width" onClick={() => collection(elem)}>
                     <div className="upper-divs-triple">
-                        <img src={elem.imageUri} className="" alt="Image not found" />
+                    {elem.imageUri ? <img src={elem.imageUri} className="" alt="" /> : <img src="./image-not-found.png" className="" alt="" /> }
                     </div>
                     <div className="lower-textss">
                         <h1>{elem.name}</h1>
-                        <p>For sale for <span>{elem.price} ETH ($131.31)</span></p>
+                        <p>Sale For <span>{elem.price} ETH</span></p>
                     </div>
                 </div>
             </div>
@@ -181,7 +183,7 @@ const Collection = () => {
     })
 
     const collection = (de) => {
-        const ETH = parseFloat(de.price * per / 100).toFixed(4)
+        const ETH = parseFloat(de.price * per / 100).toFixed(15)
         console.log("eth price", ETH)
         setDisplay({ image: de.imageUri, name: de.name, price: de.price, chain: de.chain, permalink: de.permalink, priceETH: ETH })
         setOpen(true)
@@ -264,7 +266,8 @@ const Collection = () => {
                 {/* <Myloader active={loading}/> */}
                 <div className="auto-container">
                     <div className="main-head">
-                        <h1>YOU OWN {parseFloat(per).toFixed(5)} % ($324.45) OF OUR COLLECTION</h1>
+                        {per ? <h1>YOU OWN {parseFloat(per).toFixed(5)} % OF OUR COLLECTION</h1> : <h1>YOU OWN 0 % OF OUR COLLECTION</h1>}
+                      
                         <div className="drop-down-material">
                             <h4>View </h4>
                             <FormControl variant="outlined" className={classes.formControl}>
@@ -558,17 +561,18 @@ const Collection = () => {
                     <div className="container-fluid main-divs">
                         <div class="row">
                             <div className="col-md-5 upper-divs-triple">
-                                <div className="text-head">
-                                    <img src={display.image} className="img-collection" alt="NO Image Found" />
+                                <div className="text-head1">
+                                {display.image ? <img src={display.image} className="" alt="" /> : <img src="./image-not-found.png" className="" alt="" /> }
                                 </div>
                             </div>
                             <div className="col-md-7">
                                 <div className="text-head">
                                     <h1>{display.name}</h1>
                                     <h2>For sale</h2>
-                                    <h3>You own {parseFloat(per).toFixed(5)} % of this NFT
-                                        i.e {display.priceETH} {display.chain} (Approx $ {display.priceETH * USD})</h3>
-                                    <a href={display.permalink} target="_blank"> View Detail </a>
+                                    {per ?  <h3>You own {parseFloat(per).toFixed(5)} % of this NFT
+                                        i.e {display.priceETH} {display.chain} (Approx $ {display.priceETH * USD})</h3> :  <h3>You own 0 % of this NFT
+                                        i.e 0 {display.chain} (Approx $ 0)</h3> }
+                                    {display.permalink && display.permalink !='' ?  <a href={display.permalink} target="_blank"> View Detail </a>:<div><p className="para">External link not found</p></div>}
                                 </div>
                             </div>
                         </div>
