@@ -1,5 +1,5 @@
 let Environment = {
-    backendUrl : "http://192.168.18.40:38451"
+    backendUrl : "https://api.nftarmy.app"
     // http://54.191.140.38:38451
   
   };
