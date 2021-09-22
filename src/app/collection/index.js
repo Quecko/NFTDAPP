@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 // import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Environment from "../../utils/Environment"
 // import NativeSelect from '@material-ui/core/NativeSelect';
-
 import { useWeb3React } from '@web3-react/core'
 import OwlCarousel from 'react-owl-carousel';
 import './index.scss';
@@ -21,8 +21,7 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap";
 const Collection = () => {
     let [loading, setLoading] = useState(false);
     const { account } = useWeb3React();
-    console.log('account', account)
-    const [page, setpage] = useState(1);
+    const [page, setPage] = useState(1);
     const [newlisting, setListing] = useState([])
     const [limit] = useState(12);
     const [pageCount, setPageCount] = useState(0)
@@ -37,16 +36,35 @@ const Collection = () => {
 
             })
     }
+
+    const solprice = async () => {
+        await axios.get('https://min-api.cryptocompare.com/data/price?fsym=SOL&tsyms=BTC,USD,EUR')
+            .then((response) => {
+                setUSD(response.data.USD)
+
+            })
+    }
     const chain = {
 
-        all: "http://54.191.140.38:38451/nft/getAllNft",
-        eth: "http://54.191.140.38:38451/nft/getAllNftOfEth",
-        bsc: "http://54.191.140.38:38451/nft/getAllNftOfBsc",
-        matic: "http://54.191.140.38:38451/nft/getAllNftOfMatic",
+        all: Environment.backendUrl + "/nft/getAllNft",
+        eth: Environment.backendUrl + "/nft/getAllNftOfEth",
+        bsc: Environment.backendUrl + "/nft/getAllNftOfBsc",
+        matic: Environment.backendUrl + "/nft/getAllNftOfMatic",
 
     }
-    const getAllNft = (url) => {
+    const getAllNft = () => {
+        let url;
+        if (state === 'all') {
+        url = chain.all
+        } else if (state === 'eth') {
+            url = chain.eth
+        } else if (state === 'bsc') {
+            url = chain.bsc
+        } else {
+            url = chain.matic
+        }
         setLoading(true)
+        console.log("page", page)
         axios.post(url, { limit, page })
             .then(async (response) => {
                 // setNft(response.data.data)
@@ -55,12 +73,14 @@ const Collection = () => {
                 setListing(response.data.data.ethNFT)
                 setPageCount(response.data.data.count / limit)
                 setLoading(false)
+                setPage(page)
+                
             });
     }
 
     const getPercen = () => {
         setLoading(true)
-        axios.post("http://54.191.140.38:38451/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
+        axios.post(Environment.backendUrl + "/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
             .then(async (response) => {
                 setPer(response.data.data)
                 // setNft(response.data.data)
@@ -69,16 +89,15 @@ const Collection = () => {
             });
     }
     const getObatained = () => {
-        axios.post("http://54.191.140.38:38451/nft/getAllRecentlyObtained")
+        axios.post(Environment.backendUrl + "/nft/getAllRecentlyObtained")
             .then(async (response) => {
                 setObtain(response.data.data)
             });
     }
 
     const getSold = () => {
-        axios.post("http://54.191.140.38:38451/nft/getAllRecentlySold", { limit, page })
+        axios.post(Environment.backendUrl + "/nft/getAllRecentlySold", { limit, page })
             .then(async (response) => {
-                console.log("asdfadsfas:::::", response)
                 setResSold(response.data.data)
             });
     }
@@ -92,7 +111,7 @@ const Collection = () => {
                     </div>
                     <div className="lower-textss">
                         <h1>{elem.name} </h1>
-                        <p>For sale for <span>{elem.price} {elem.chain}</span></p>
+                        <p>For sale for <span>{elem.price} {elem.chain.toUpperCase()}</span></p>
                     </div>
                 </div>
             </div>
@@ -148,25 +167,17 @@ const Collection = () => {
     }));
 
     const classes = useStyles();
-    const [state, setState] = React.useState('');
+    const [state, setState] = useState('all');
     const handleChange = (event) => {
-        const name = event.target.value;
-        if (event.target.value === 'all') {
-            getAllNft(chain.all)
-        } else if (event.target.value === 'eth') {
-            getAllNft(chain.eth)
-        } else if (event.target.value === 'bsc') {
-            getAllNft(chain.bsc)
-        } else {
-            getAllNft(chain.matic)
-        }
-        console.log("e ma kia a rha ha", name)
+        setPage(1)
         setState(event.target.value);
+        // getAllNft()
     };
     const handlePageClick = (e) => {
         const selectedPage = e.selected;
-        setpage(selectedPage + 1)
-        getAllNft()
+        console.log("selected",selectedPage)
+        setPage(selectedPage + 1)
+        // getAllNft()
     };
     // Material ui drop down End 
 
@@ -184,7 +195,6 @@ const Collection = () => {
 
     const collection = (de) => {
         const ETH = parseFloat(de.price * per / 100).toFixed(15)
-        console.log("eth price", ETH)
         setDisplay({ image: de.imageUri, name: de.name, price: de.price, chain: de.chain, permalink: de.permalink, priceETH: ETH })
         setOpen(true)
 
@@ -225,12 +235,17 @@ const Collection = () => {
     };
 
     useEffect(() => {
-        getAllNft(chain.all)
+        // getAllNft()
         getPercen()
         Ethprice()
+        // solprice()
         getSold()
         getObatained()
-    }, [page])
+    }, [])
+
+    useEffect(() => {
+        getAllNft()
+    }, [state , page])
 
     // const newlisting = nft.slice(0, 8).map(async(elem) => {
     //     const url="https://api.artblocks.io/token/6279"
@@ -365,12 +380,14 @@ const Collection = () => {
                                         breakClassName={"break-me"}
                                         pageCount={pageCount}
                                         marginPagesDisplayed={2}
+                                        forcePage={page-1}
                                         pageRangeDisplayed={5}
                                         // itemsCountPerPage={10}
                                         // totalItemsCount={450}
                                         onPageChange={handlePageClick}
                                         containerClassName={"pagination"}
                                         subContainerClassName={"pages pagination"}
+                                        // initialPage={1}
                                         activeClassName={"active"} />
                                 </div>
                                 {/* <div className="col-lg-3 col-md-4 col-12">
@@ -570,7 +587,7 @@ const Collection = () => {
                                     <h1>{display.name}</h1>
                                     <h2>For sale</h2>
                                     {per ?  <h3>You own {parseFloat(per).toFixed(5)} % of this NFT
-                                        i.e {display.priceETH} {display.chain} (Approx $ {display.priceETH * USD})</h3> :  <h3>You own 0 % of this NFT
+                                        i.e {display.priceETH} {display.chain.toUpperCase()} (Approx $ {display.priceETH * USD})</h3> :  <h3>You own 0 % of this NFT
                                         i.e 0 {display.chain} (Approx $ 0)</h3> }
                                     {display.permalink && display.permalink !='' ?  <a href={display.permalink} target="_blank"> View Detail </a>:<div><p className="para">External link not found</p></div>}
                                 </div>

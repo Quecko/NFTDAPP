@@ -5,6 +5,7 @@ import { useWeb3React } from '@web3-react/core'
 import './landing.scss';
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
+import Environment from "../../utils/Environment"
 
 const Landing=()=> {
   const { account } = useWeb3React();
@@ -41,14 +42,14 @@ const Landing=()=> {
     };
 
     const getObatained =  () => {
-      axios.post("http://54.191.140.38:38451/nft/getAllRecentlyObtained", {})
+      axios.post(Environment.backendUrl + "/nft/getAllRecentlyObtained", {})
           .then( (response) => {
             setobtain(response.data.data)
           }).catch(error=>{console.log('errror' , error)})
   }
 
   const getPercen = () => {
-    axios.post("http://54.191.140.38:38451/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
+    axios.post(Environment.backendUrl + "/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
         .then(async (response) => {
             setPer(response.data.data)
         });

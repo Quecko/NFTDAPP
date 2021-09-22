@@ -1,0 +1,17 @@
+.walletconnect-modal__base {
+    -webkit-font-smoothing: antialiased;
+    background: #ffffff;
+    border-radius: 24px;
+    margin-top: 41px;
+    padding: 24px 24px 22px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: transform;
+    overflow: visible;
+    transform: translateY(-50%);
+    top: 55%;
+    max-width: 403px!important;
+    margin: auto;
+}
