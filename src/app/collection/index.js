@@ -80,7 +80,7 @@ const Collection = () => {
 
     const getPercen = () => {
         setLoading(true)
-        axios.post(Environment.backendUrl + "/nft/getSharePerAddress", { contract: '0x016c285d5b918b92aa85ef1e147498badfe30d69', address: account })
+        axios.post(Environment.backendUrl + "/nft/getSharePerAddress", { contract: '0x0b6519E7D21ad94DabCaA0Ef010991F80B303Df4', address: account })
             .then(async (response) => {
                 setPer(response.data.data)
                 // setNft(response.data.data)
@@ -281,7 +281,7 @@ const Collection = () => {
                 {/* <Myloader active={loading}/> */}
                 <div className="auto-container">
                     <div className="main-head">
-                        {per ? <h1>YOU OWN {parseFloat(per).toFixed(5)} % OF OUR COLLECTION</h1> : <h1>YOU OWN 0 % OF OUR COLLECTION</h1>}
+                        {per ? <h1>YOU OWN {per < 0.001 ? parseFloat(per).toFixed(5) :  parseFloat(per).toFixed(1)} % OF OUR COLLECTION</h1> : <h1>YOU OWN 0 % OF OUR COLLECTION</h1>}
                       
                         <div className="drop-down-material">
                             <h4>View </h4>
@@ -587,8 +587,8 @@ const Collection = () => {
                                     <h1>{display.name}</h1>
                                     <h2>For sale</h2>
                                     {per ?  <h3>You own {parseFloat(per).toFixed(5)} % of this NFT
-                                        i.e {display.priceETH} {display.chain.toUpperCase()} (Approx $ {display.priceETH * USD})</h3> :  <h3>You own 0 % of this NFT
-                                        i.e 0 {display.chain} (Approx $ 0)</h3> }
+                                        i.e {display.priceETH} {display.chain.toUpperCase()} </h3> :  <h3>You own 0 % of this NFT
+                                        i.e 0 {display.chain}</h3> }
                                     {display.permalink && display.permalink !='' ?  <a href={display.permalink} target="_blank"> View Detail </a>:<div><p className="para">External link not found</p></div>}
                                 </div>
                             </div>
@@ -601,6 +601,6 @@ const Collection = () => {
     );
 
 }
-
+// (Approx $ {display.priceETH * USD})
 
 export default Collection
