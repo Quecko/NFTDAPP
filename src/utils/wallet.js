@@ -10,8 +10,8 @@ export const setupNetwork = async () => {
   const provider = (window).ethereum
   if (provider) {
     // const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
-    // const chainId = 56
-    const chainId = 97
+    const chainId = 56
+    // const chainId = 97
     try {
       await provider.request({
         method: 'wallet_addEthereumChain',
@@ -25,8 +25,8 @@ export const setupNetwork = async () => {
               decimals: 18,
             },
             rpcUrls: nodes,
-            // blockExplorerUrls: ['https://bscscan.com/'],
-            blockExplorerUrls: ['https://testnet.bscscan.com/'],
+            blockExplorerUrls: ['https://bscscan.com/'],
+            // blockExplorerUrls: ['https://testnet.bscscan.com/'],
 
           },
         ],

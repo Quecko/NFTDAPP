@@ -80,7 +80,7 @@ const Collection = () => {
 
     const getPercen = () => {
         setLoading(true)
-        axios.post(Environment.backendUrl + "/nft/getSharePerAddress", { contract: '0x0b6519E7D21ad94DabCaA0Ef010991F80B303Df4', address: account })
+        axios.post(Environment.backendUrl + "/nft/getSharePerAddress", { contract: '0xb36b5716CC186Ae16696De2953ae56DfaFCC23c4', address: account })
             .then(async (response) => {
                 setPer(response.data.data)
                 // setNft(response.data.data)
@@ -110,7 +110,7 @@ const Collection = () => {
                     {elem.imageUri ? <img src={elem.imageUri} className="" alt="" /> : <img src="./image-not-found.png" className="" alt="" /> }
                     </div>
                     <div className="lower-textss">
-                        <h1>{elem.name} </h1>
+                        <h1>{elem.uriData?.name ? elem.uriData?.name.slice(0,50) : elem?.name} </h1>
                         <p>For sale for <span>{elem.price} {elem.chain.toUpperCase()}</span></p>
                     </div>
                 </div>
@@ -186,19 +186,22 @@ const Collection = () => {
     const [display, setDisplay] = useState({
         image: '',
         name: '',
+        uriName:'',
         price: '',
         chain: '',
         permalink: '',
-        priceETH: ''
+        priceETH: '',
+        manual:''
 
     })
 
     const collection = (de) => {
         const ETH = parseFloat(de.price * per / 100).toFixed(15)
-        setDisplay({ image: de.imageUri, name: de.name, price: de.price, chain: de.chain, permalink: de.permalink, priceETH: ETH })
+        setDisplay({ image: de.imageUri, manual:de.manual, uriName: de.uriData?.name, name:de?.name, price: de.price, chain: de.chain, permalink: de.permalink, priceETH: ETH })
         setOpen(true)
 
     }
+    console.log("dfdsfsdfsdfsdfsd",display)
     const close = async () => {
         setOpen(false)
     };
@@ -281,7 +284,7 @@ const Collection = () => {
                 {/* <Myloader active={loading}/> */}
                 <div className="auto-container">
                     <div className="main-head">
-                        {per ? <h1>YOU OWN {per < 0.001 ? parseFloat(per).toFixed(5) :  parseFloat(per).toFixed(1)} % OF OUR COLLECTION</h1> : <h1>YOU OWN 0 % OF OUR COLLECTION</h1>}
+                        {per ? <h1>YOU OWN {per > 0.001 ? parseFloat(per).toFixed(5) :  parseFloat(per).toFixed(1)} % OF OUR COLLECTION</h1> : <h1>YOU OWN 0 % OF OUR COLLECTION</h1>}
                       
                         <div className="drop-down-material">
                             <h4>View </h4>
@@ -584,10 +587,11 @@ const Collection = () => {
                             </div>
                             <div className="col-md-7">
                                 <div className="text-head">
-                                    <h1>{display.name}</h1>
-                                    <h2>For sale</h2>
+                               
+                                    <h1> {display.uriName ? display?.uriName.split(0,50) : display?.name.split(0,50)}</h1>
+                                    <h2>For sale {display.price ? `${display.price} ${display.chain.toUpperCase()}` :''}</h2>
                                     {per ?  <h3>You own {parseFloat(per).toFixed(5)} % of this NFT
-                                        i.e {display.priceETH} {display.chain.toUpperCase()} </h3> :  <h3>You own 0 % of this NFT
+                                        i.e {parseFloat(display.priceETH).toFixed(5)} {display.chain.toUpperCase()} </h3> :  <h3>You own 0 % of this NFT
                                         i.e 0 {display.chain}</h3> }
                                     {display.permalink && display.permalink !='' ?  <a href={display.permalink} target="_blank"> View Detail </a>:<div><p className="para">External link not found</p></div>}
                                 </div>

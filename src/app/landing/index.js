@@ -49,7 +49,7 @@ const Landing=()=> {
   }
 
   const getPercen = () => {
-    axios.post(Environment.backendUrl + "/nft/getSharePerAddress", { contract: '0x0b6519E7D21ad94DabCaA0Ef010991F80B303Df4', address: account })
+    axios.post(Environment.backendUrl + "/nft/getSharePerAddress", { contract: '0xb36b5716CC186Ae16696De2953ae56DfaFCC23c4', address: account })
         .then(async (response) => {
             setPer(response.data.data)
         });
@@ -98,7 +98,7 @@ const dataObtain = obtain.map((elem) => {
           <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" />
           <div className="auto-container">
             <div className="main-head">
-            {per ? <h1>YOU OWN {per < 0.001 ? parseFloat(per).toFixed(6) :  parseFloat(per).toFixed(1)} % OF OUR COLLECTION</h1> : <h1>YOU OWN 0 % OF OUR COLLECTION</h1>}
+            {per ? <h1>YOU OWN {per > 0.001 ? parseFloat(per).toFixed(6) :  parseFloat(per).toFixed(1)} % OF OUR COLLECTION</h1> : <h1>YOU OWN 0 % OF OUR COLLECTION</h1>}
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
               <button className="header-button" type="button">BUY</button>
               <button className="header-button" type="button">CHART</button>
