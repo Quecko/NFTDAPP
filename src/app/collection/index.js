@@ -280,7 +280,7 @@ const Collection = () => {
                 >
                     <source src={require("../../static/images/landing-nftdapp/landing-bac-vid.mp4")} type="video/mp4" />
                 </video>
-                <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" />
+                {/* <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" /> */}
                 {/* <Myloader active={loading}/> */}
                 <div className="auto-container">
                     <div className="main-head">

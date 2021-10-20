@@ -95,7 +95,7 @@ const dataObtain = obtain.map((elem) => {
             >
               <source src={require("../../static/images/landing-nftdapp/landing-bac-vid.mp4")} type="video/mp4" />
             </video>
-          <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" />
+          {/* <img src={require("../../static/images/landing-nftdapp/Intersect.png")} className="main-heads-one" alt="" /> */}
           <div className="auto-container">
             <div className="main-head">
             {per ? <h1>YOU OWN {per > 0.001 ? parseFloat(per).toFixed(6) :  parseFloat(per).toFixed(1)} % OF OUR COLLECTION</h1> : <h1>YOU OWN 0 % OF OUR COLLECTION</h1>}

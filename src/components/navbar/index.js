@@ -64,7 +64,7 @@ const Navbar = () => {
                     <div className="col-md-11 offset-md-1 m-auto p-md-0">
                         <nav className="navbar navbar-expand-lg">
                             <Link className="navbar-brand" to="/"><img src={require("../../static/images/landing-nftdapp/logo-header.png")} alt="" /></Link>
-                            <button className="navbar-toggler" type="button" data-toggle="collapse"
+                            <button className="navbar-toggler collapsed" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                                 aria-label="Toggle navigation">
                                 <div class="hamburger">
