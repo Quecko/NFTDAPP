@@ -14,7 +14,7 @@ class Footer extends Component {
         return (
             <footer className="main-footer-outer">
                 <div className="main-footer">
-                    <img src={require("../../static/images/landing-nftdapp/logo-footer.png")} className="main-heads-one" alt="" />
+                    <img src={require("../../static/images/landing-nftdapp/logo-header.svg")} className="main-heads-one" alt="" />
                     <div className="footer-socials-all">
                         <Link className='footer-social'> <img src={require("../../static/images/landing-nftdapp/footer-1.png")} alt="" /></Link>
                         <Link className='footer-social'> <img src={require("../../static/images/landing-nftdapp/footer-2.png")} alt="" /></Link>

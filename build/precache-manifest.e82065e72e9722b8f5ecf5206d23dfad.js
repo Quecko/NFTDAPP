@@ -1,43 +1,43 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "650501e6b9a574a266fc47d131a36d2e",
+    "revision": "4ec683ecef72ededcdcdad77471d9c56",
     "url": "/index.html"
   },
   {
-    "revision": "a8b0b693a19f2b29c284",
+    "revision": "2c7feb5abc517ecdc630",
     "url": "/static/css/3.001ea3fd.chunk.css"
   },
   {
-    "revision": "635ae9e052a1027cb9ae",
-    "url": "/static/css/main.add9f14d.chunk.css"
+    "revision": "9ff21970d3c2c8f12c8d",
+    "url": "/static/css/main.73fe886b.chunk.css"
   },
   {
-    "revision": "f08132eea63059fe690c",
-    "url": "/static/js/2.f1f2b104.chunk.js"
+    "revision": "eb23cd0bee112593b4ca",
+    "url": "/static/js/2.7db424f6.chunk.js"
   },
   {
     "revision": "7a5582a721409b13133a7d92b3d177da",
-    "url": "/static/js/2.f1f2b104.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.7db424f6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a8b0b693a19f2b29c284",
-    "url": "/static/js/3.10dcab05.chunk.js"
+    "revision": "2c7feb5abc517ecdc630",
+    "url": "/static/js/3.016a998e.chunk.js"
   },
   {
     "revision": "ec4b7645c191d4cc2ffcc62307d000fd",
-    "url": "/static/js/3.10dcab05.chunk.js.LICENSE.txt"
+    "url": "/static/js/3.016a998e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1c20323766d91d9ee252",
-    "url": "/static/js/4.0c95642e.chunk.js"
+    "revision": "9c458adf29d451180d53",
+    "url": "/static/js/4.4feecb73.chunk.js"
   },
   {
-    "revision": "635ae9e052a1027cb9ae",
-    "url": "/static/js/main.81ced8d9.chunk.js"
+    "revision": "9ff21970d3c2c8f12c8d",
+    "url": "/static/js/main.ed898e7a.chunk.js"
   },
   {
-    "revision": "36c5e9234b51b9efe633",
-    "url": "/static/js/runtime-main.7c1ec58e.js"
+    "revision": "90e57033ba262483c243",
+    "url": "/static/js/runtime-main.6cdd15e3.js"
   },
   {
     "revision": "0284986e2344884838e81b6ace908ea0",
@@ -70,6 +70,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e2297691fc04173e71d5bc3101a34e4c",
     "url": "/static/media/landing-bac-vid.e2297691.mp4"
+  },
+  {
+    "revision": "a039b21ddb012651f0b7dda4e9a5eb6d",
+    "url": "/static/media/logo-header.a039b21d.svg"
   },
   {
     "revision": "a124f4b8d4cd8f8751d051e5835eb6b7",
