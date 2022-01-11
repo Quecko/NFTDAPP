@@ -24,9 +24,9 @@ const App=()=>  {
             /> */}
             <Router history={hist}>
               <Switch>
-                <Route exact path='/' component={props => <Landing {...props} />} />
-                <Route exact path='/landing' component={props => <Landing {...props} />} />
-                <Route exact path='/collection' component={props => <Collection {...props} />} />
+                <Route exact path='/' component={props => <Collection {...props} />} />
+                {/* <Route exact path='/landing' component={props => <Landing {...props} />} /> */}
+                {/* <Route exact path='/collection' component={props => <Collection {...props} />} /> */}
               </Switch>
             </Router>
       </div>

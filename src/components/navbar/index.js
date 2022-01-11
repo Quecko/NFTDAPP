@@ -77,11 +77,11 @@ const Navbar = () => {
                                 <ul className="navbar-nav ml-auto">
                                     <li className="nav-item active">
                                         {/* <Link className="nav-link  pr-lg-4" href="/poolss">Pool  <span className="sr-only">(current)</span></Link> */}
-                                        <Link className='nav-link pr-lg-3' to='/'>HOME</Link>
+                                        {/* <Link className='nav-link pr-lg-3' to='/'>HOME</Link> */}
                                     </li>
                                     <li className="nav-item active">
                                         {/* <Link className="nav-link  pr-lg-4" href="/poolss">Pool  <span className="sr-only">(current)</span></Link> */}
-                                        <Link className='nav-link pr-lg-3' to='/collection'>NFT COLLECTIONS</Link>
+                                        <Link className='nav-link pr-lg-3' to='/'>NFT COLLECTIONS</Link>
                                     </li>
                                 </ul>
 
