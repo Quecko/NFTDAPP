@@ -29,6 +29,8 @@ const Collection = () => {
     const [USD, setUSD] = useState(0)
     const [obtain, setObtain] = useState([])
     const [recSold, setResSold] = useState([])
+console.log(obtain, 'obtainokokokss');
+
     const Ethprice = async () => {
         await axios.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR')
             .then((response) => {
